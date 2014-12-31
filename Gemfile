@@ -45,8 +45,14 @@ end
 
 
 # Added by Lucius
-
-gem 'guard-rspec', require: false
+gem 'bootstrap-sass', '~> 3.3.1'
+gem 'autoprefixer-rails'
+gem 'simple_form'
+gem 'devise'
+gem 'font-awesome-sass', '~> 4.2.0'
+gem 'country_select'
+gem "letter_opener", :group => :development
+gem 'rails-i18n', '~> 4.0.0' # For 4.0.x
 
 group :development, :test do
   gem "rspec-rails", "~> 3.1.0"
@@ -59,6 +65,7 @@ group :test do
   gem "database_cleaner", "~> 1.3.0"
   gem "launchy", "~> 2.4.2"
   gem "selenium-webdriver", "~> 2.43.0"
+  gem 'guard-rspec', require: false
   gem "terminal-notifier"
   gem "terminal-notifier-guard"
 end
