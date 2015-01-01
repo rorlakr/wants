@@ -1,5 +1,9 @@
 en:
   views:
+    common:
+      show: Show
+      edit: Edit
+      destroy: Destroy
     jobs:
       index:
         listing_jobs: Listing Jobs

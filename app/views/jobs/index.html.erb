@@ -15,10 +15,10 @@
         <tr>
           <td><%= job.title %></td>
           <td><%= time_ago_in_words job.updated_at %>전</td>
-          <td class='col-md-4 center'>
-            <%= link_to 'Show', job, class:'btn btn-default btn-xs' %>
-            <%= link_to 'Edit', edit_job_path(job), class:'btn btn-default btn-xs' %>
-            <%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' }, class:'btn btn-default btn-xs' %>
+          <td class='col-md-3 center'>
+            <%= link_to t('views.common.show'), job, class:'btn btn-default btn-xs' %>
+            <%= link_to t('views.common.edit'), edit_job_path(job), class:'btn btn-default btn-xs' %>
+            <%= link_to t('views.common.destroy'), job, method: :delete, data: { confirm: 'Are you sure?' }, class:'btn btn-default btn-xs' %>
           </td>
         </tr>
       <% end %>

@@ -1,5 +1,9 @@
 ko:
   views:
+    common:
+      show: 보기
+      edit: 수정
+      destroy: 삭제
     jobs:
       index:
         listing_jobs: 일꺼리
