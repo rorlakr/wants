@@ -1,9 +1,13 @@
+.homepage-header {
+   padding-top:1em;padding-left:2em; padding-right:2em;
+   margin-bottom:2em;
+}
 .main_link {
   margin: 2em 0;
   border-collapse: separate;
-  padding:0;
-  .jobs { padding-left: 2em;}
-  .workers { padding-right: 2em; }
+  padding:0 1em;
+  font-family:NanumGothic-ExtraBold;
+  .jobs { margin-bottom: 2em; }
   a {
     font-size:5em;
     line-height: 1.2em;

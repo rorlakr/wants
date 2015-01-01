@@ -1,3 +1,9 @@
+<% if @job.company %>
+  <h1 style='border-bottom:1px solid #eaeaea;'>
+    <%= @job.company %>
+  </h1>
+<% end %>
+
 <h3><%= @job.title %></h3>
 <p>: <%= @job.content %>
 
@@ -12,6 +18,12 @@
       <td><%= @job.intro %></td>
     </tr>
 
+    <% if @job.always %>
+    <tr>
+      <th><%= t('activerecord.attributes.job.always') %></th>
+      <td><%= @job.always %></td>
+    </tr>
+    <% else %>
     <tr>
       <th><%= t('activerecord.attributes.job.from') %></th>
       <td><%= @job.from %></td>
@@ -21,11 +33,7 @@
       <th><%= t('activerecord.attributes.job.to') %></th>
       <td><%= @job.to %></td>
     </tr>
-
-    <tr>
-      <th><%= t('activerecord.attributes.job.always') %></th>
-      <td><%= @job.always %></td>
-    </tr>
+    <% end %>
 
     <tr>
       <th><%= t('activerecord.attributes.job.contact') %></th>
@@ -39,5 +47,7 @@
   </table>
 </div>
 
-<%= link_to t('views.jobs.show.edit'), edit_job_path(@job), class: 'btn btn-default' %>
-<%= link_to t('views.jobs.show.back'), jobs_path, class: 'btn btn-default' %>
+<div class="form-actions">
+  <%= link_to t('views.jobs.show.edit'), edit_job_path(@job), class: 'btn btn-default' %>
+  <%= link_to t('views.jobs.show.back'), jobs_path, class: 'btn btn-default' %>
+</div>

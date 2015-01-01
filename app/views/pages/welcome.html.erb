@@ -1,28 +1,28 @@
-<div class="col-md-12" style='padding-top:1em;padding-left:2em; padding-right:2em;'>
-<%= flash_messages %>
-<h2>
-  루비 개발자 구인/구직 무료 서비스
-</h2>
-
-<% if user_signed_in? %>
-  <%= current_user.email %>로 로그인하셨습니다.
-  <%= link_to "Log out", destroy_user_session_path, method: :delete, data: { confirm: "Are you sure?"} %>
-<% else %>
-  <%= link_to "Log in", new_user_session_path %> |
-  <%= link_to "Sign up", new_user_session_path %> |
-  <%= link_to "Password lost?", new_user_password_path %> |
-  <%= link_to "Confirm email", new_user_confirmation_path %>
-<% end %>
+<div class="homepage-header col-md-12">
+  <%= flash_messages %>
+  <h2>
+    루비 개발자 구인/구직 무료 서비스
+  </h2>
+  <div class='login-status'>
+    <% if user_signed_in? %>
+      <%= current_user.email %>로 로그인하셨습니다.
+      <%= link_to "Log out", destroy_user_session_path, method: :delete, data: { confirm: "Are you sure?"} %>
+    <% else %>
+      <%= link_to "Log in", new_user_session_path %> |
+      <%= link_to "Sign up", new_user_session_path %> |
+      <%= link_to "Password lost?", new_user_password_path %> |
+      <%= link_to "Confirm email", new_user_confirmation_path %>
+    <% end %>
+  </div>
 
 </div>
 
-<table class='main_link col-md-12' style="font-family:NanumGothic-ExtraBold;">
-<tr>
-  <td class='jobs col-md-6'>
+
+<div class='main_link row'>
+  <div class='jobs col-md-6'>
     <%= link_to raw('구인<br />(Jobs)'), jobs_path %>
-  </td>
-  <td class='workers col-md-6'>
+  </div>
+  <div class='workers col-md-6'>
     <%= link_to raw('구직<br />(Workers)'), '#' %>
-  </td>
-</tr>
-</table>
+  </div>
+</div>
