@@ -1,6 +1,11 @@
 ko:
   activerecord:
     attributes:
+      user:
+        email: 이메일
+        password: 비밀번호
+        password_confirmation: 비밀번호 재입력
+        remember_me: 로그인상태 기억하기
       job:
         title: 글제목
         content: 글내용

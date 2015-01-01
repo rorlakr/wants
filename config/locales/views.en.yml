@@ -4,6 +4,23 @@ en:
       show: Show
       edit: Edit
       destroy: Destroy
+    devise:
+      sessions:
+        execute: Login
+        login: Log In
+        signup: Signup
+        signup_header: Sign Up
+      passwords:
+        forgot_your_password: Forgot your passwords?
+        not_received_confirmation: Didn't receive confirmation instructions?
+        reset_password: Send me reset password instructions
+        change_your_password: Change your password
+        change_my_password: Change my password
+        new_password: New Password
+        confirm_your_password: Confirm your password
+      confirmations:
+        resend_confirmation: Resend confirmation instructions
+        resend_confirm: Resend
     jobs:
       index:
         listing_jobs: Listing Jobs

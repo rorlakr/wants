@@ -4,6 +4,23 @@ ko:
       show: 보기
       edit: 수정
       destroy: 삭제
+    devise:
+      sessions:
+        execute: 실행
+        login: 로그인
+        signup: 등록
+        signup_header: 회원가입
+      passwords:
+        forgot_your_password: 비밀번호 분실
+        not_received_confirmation: 이메일 확인 안내문을 받지 못하셨습니까?
+        reset_password: 비밀번호 재설정 안내문 발송
+        change_your_password: 비밀번호 변경
+        change_my_password: 변경요청
+        new_password: 새로운 비밀번호
+        confirm_your_password: 비밀번호 재입력
+      confirmations:
+        resend_confirmation: 확인 안내문 이메일 재발송
+        resend_confirm: 확인 안내문 재발송
     jobs:
       index:
         listing_jobs: 일꺼리
