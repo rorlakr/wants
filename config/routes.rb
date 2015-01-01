@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :jobs
+
   get 'pages/welcome' => 'high_voltage/pages#show', id: 'welcome'
 
   devise_for :users

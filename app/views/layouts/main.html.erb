@@ -1,0 +1,12 @@
+<%= content_for :main_content do %>
+    <div class="left-sidebar col-md-3">Books</div>
+    <div class="main-body col-md-6">
+      <%= flash_messages %>
+
+      <%= yield %>
+
+    </div>
+    <div class="right-sidebar col-md-3">Companies</div>
+<% end %>
+
+<%= render template: 'layouts/application' %>

@@ -1,0 +1,46 @@
+.header {
+  text-align: center;
+  background-color: $theme-main-color;
+  height:8em;
+  color: white;
+  border-radius: 1em 1em 0 0;
+  h1 {line-height:3em;font-weight: 900;}
+
+  a {
+    color:white;
+    text-decoration: none;
+    &:hover {
+      color: #f8c7c7;
+    }
+  }
+}
+
+.trunk {
+  overflow:auto;
+  min-height:40em;
+  border-right:1px solid #eaeaea;
+  border-left:1px solid #eaeaea;
+  .left-sidebar {
+    padding:1em;
+
+  }
+  .main-body {
+    padding:1em 0;
+
+
+  }
+  .right-sidebar {
+    padding:1em;
+  }
+}
+
+
+.footer {
+  text-align: center;
+  height:3em;
+  border-top: 1px solid #eaeaea;
+  border:1px solid #eaeaea;
+  border-radius: 0 0 1em 1em;
+  line-height: 3em;
+  background-color: #F4F4F4;
+}

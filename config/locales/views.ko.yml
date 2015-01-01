@@ -1,0 +1,6 @@
+ko:
+  views:
+    jobs:
+      index:
+        listing_jobs: 일꺼리 목록
+        new_job: 일꺼리 등록

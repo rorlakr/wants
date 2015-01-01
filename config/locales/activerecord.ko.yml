@@ -1,0 +1,12 @@
+ko:
+  activerecord:
+    attributes:
+      job:
+        title: 글제목
+        content: 글내용
+        company: 회사명
+        intro: 회사소개
+        from: 구인시작일
+        to: 구인종료일
+        always: 상시구인
+        contact: 연락처

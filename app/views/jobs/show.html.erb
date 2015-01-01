@@ -1,0 +1,45 @@
+<p>
+  <strong>Title:</strong>
+  <%= @job.company %>
+</p>
+<p>
+  <strong>Content:</strong>
+  <%= @job.company %>
+</p>
+<p>
+  <strong>Company:</strong>
+  <%= @job.company %>
+</p>
+
+<p>
+  <strong>Intro:</strong>
+  <%= @job.intro %>
+</p>
+
+<p>
+  <strong>From:</strong>
+  <%= @job.from %>
+</p>
+
+<p>
+  <strong>To:</strong>
+  <%= @job.to %>
+</p>
+
+<p>
+  <strong>Always:</strong>
+  <%= @job.always %>
+</p>
+
+<p>
+  <strong>Contact:</strong>
+  <%= @job.contact %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @job.user %>
+</p>
+
+<%= link_to 'Edit', edit_job_path(@job), class: 'btn btn-default' %>
+<%= link_to 'Back', jobs_path, class: 'btn btn-default' %>

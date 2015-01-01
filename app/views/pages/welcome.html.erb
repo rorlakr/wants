@@ -1,5 +1,7 @@
+<div class="col-md-12" style='padding-top:1em;'>
+<%= flash_messages %>
 <h2>
-  Wants 홈페이지...
+  루비 개발자 구인/구직 무료 서비스
 </h2>
 
 <% if user_signed_in? %>
@@ -11,3 +13,16 @@
   <%= link_to "Password lost?", new_user_password_path %> |
   <%= link_to "Confirm email", new_user_confirmation_path %>
 <% end %>
+
+</div>
+
+<table class='main_link col-md-12'>
+<tr>
+  <td class='jobs col-md-6'>
+    <%= link_to raw('구인<br />(Jobs)'), jobs_path %>
+  </td>
+  <td class='workers col-md-6'>
+    <%= link_to raw('구직<br />(Workers)'), '#' %>
+  </td>
+</tr>
+</table>

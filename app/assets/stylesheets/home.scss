@@ -1,0 +1,27 @@
+.main_link {
+  margin: 2em 0;
+  border-spacing: 1em;
+  border-collapse: separate;
+  padding:0;
+  a {
+    line-height: 1em;
+    width:100% !important;
+    border-radius: 5px;
+    display:block;
+    padding:1.5em 0 1.5em;
+    &:hover {
+      text-decoration: none;
+      background-color: $theme-main-color;
+      color: white;
+    }
+  }
+  .jobs, .workers {
+    text-align: center;
+    font-size:5em;
+    font-weight: bolder;
+    // height: 5em;
+    border: 1px solid #eaeaea;
+    border-radius: 5px;
+    padding:0;
+  }
+}

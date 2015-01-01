@@ -53,6 +53,7 @@ gem 'font-awesome-sass', '~> 4.2.0'
 gem 'country_select'
 gem "letter_opener", :group => :development
 gem 'rails-i18n', '~> 4.0.0' # For 4.0.x
+gem 'bootstrap-datepicker-rails'
 
 group :development, :test do
   gem "rspec-rails", "~> 3.1.0"

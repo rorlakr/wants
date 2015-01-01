@@ -1,0 +1,12 @@
+en:
+  activerecord:
+    attributes:
+      job:
+        title: Title
+        content: Content
+        company: Company Name
+        intro: Introduction
+        from: Starting Date
+        to: Ending Date
+        always: Regualr Employment
+        contact: Contacts

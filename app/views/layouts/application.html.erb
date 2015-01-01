@@ -9,9 +9,19 @@
 <body>
 
   <div class="container">
-  <%= flash_messages %>
+    <div class="header">
+      <%= link_to root_path do %>
+      <h1>The Wants <sup>&reg;</sup></h1>
+      <% end %>
+    </div>
+    <div class="trunk">
 
-    <%= yield %>
+      <%= content_for?(:main_content) ? yield(:main_content) : yield %>
+
+    </div>
+    <div class="footer">
+      Copyright 2014, Lucius
+    </div>
   </div>
 
 </body>

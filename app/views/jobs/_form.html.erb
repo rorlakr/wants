@@ -1,0 +1,19 @@
+<%= simple_form_for(@job) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :title %>
+    <%= f.input :content %>
+    <%= f.input :company %>
+    <%= f.input :intro %>
+    <%= f.input :from, as: :bootstrap_datepicker, input_html: { class: 'form-control'} %>
+    <%= f.input :to, as: :bootstrap_datepicker, input_html: { class: 'form-control'} %>
+    <%= f.input :always %>
+    <%= f.input :contact, placeholder: '전화번호 / 이메일주소' %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
+

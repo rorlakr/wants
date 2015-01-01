@@ -1,0 +1,6 @@
+en:
+  views:
+    jobs:
+      index:
+        listing_jobs: Listing Jobs
+        new_job: New Job
