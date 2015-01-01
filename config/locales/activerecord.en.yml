@@ -5,8 +5,10 @@ en:
         title: Title
         content: Content
         company: Company Name
+        homepage: Homepage URL
         intro: Introduction
         from: Starting Date
         to: Ending Date
         always: Regualr Employment
         contact: Contacts
+        user: Writer

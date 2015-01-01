@@ -2,5 +2,11 @@ ko:
   views:
     jobs:
       index:
-        listing_jobs: 일꺼리 목록
+        listing_jobs: 일꺼리
         new_job: 일꺼리 등록
+      show:
+        back: 목록
+        edit: 수정
+      form:
+        back: 목록
+        show: 보기

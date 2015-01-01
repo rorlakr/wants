@@ -4,3 +4,9 @@ en:
       index:
         listing_jobs: Listing Jobs
         new_job: New Job
+      show:
+        back: List
+        edit: Edit
+      form:
+        back: List
+        show: Show

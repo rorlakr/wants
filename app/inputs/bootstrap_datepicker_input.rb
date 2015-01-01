@@ -14,7 +14,7 @@ class BootstrapDatepickerInput < SimpleForm::Inputs::Base
     return_string =
       "<div class='input-group date'>\n" +
         "#{@builder.text_field(attribute_name, text_field_options.to_hash)}\n" +
-        "<span class='input-group-addon'><i class='glyphicon glyphicon-th'></i></span>\n" +
+        "<span class='input-group-addon'><i class='glyphicon glyphicon-calendar'></i></span>\n" +
       "</div>\n" +
       "#{@builder.hidden_field(attribute_name, hidden_field_options.to_hash)}\n"
     return return_string.html_safe

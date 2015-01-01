@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150101082801) do
+ActiveRecord::Schema.define(version: 20150101110752) do
 
   create_table "jobs", force: :cascade do |t|
     t.string   "company",                    null: false
@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 20150101082801) do
     t.datetime "updated_at",                 null: false
     t.string   "title"
     t.text     "content"
+    t.string   "homepage"
   end
 
   add_index "jobs", ["user_id"], name: "index_jobs_on_user_id"

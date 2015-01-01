@@ -1,36 +1,30 @@
 <h1><%= t('views.jobs.index.listing_jobs') %></h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Company</th>
-      <th>Intro</th>
-      <th>From</th>
-      <th>To</th>
-      <th>Always</th>
-      <th>Contact</th>
-      <th>User</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @jobs.each do |job| %>
+<div class="panel panel-default">
+  <table class='table table-bordered table-hover table-condensed'>
+    <thead>
       <tr>
-        <td><%= job.company %></td>
-        <td><%= job.intro %></td>
-        <td><%= job.from %></td>
-        <td><%= job.to %></td>
-        <td><%= job.always %></td>
-        <td><%= job.contact %></td>
-        <td><%= job.user %></td>
-        <td><%= link_to 'Show', job %></td>
-        <td><%= link_to 'Edit', edit_job_path(job) %></td>
-        <td><%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>글제목</th>
+        <th>작성일</th>
+        <th>자료작업</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+
+    <tbody>
+      <% @jobs.each do |job| %>
+        <tr>
+          <td><%= job.title %></td>
+          <td><%= time_ago_in_words job.updated_at %>전</td>
+          <td class='col-md-4 center'>
+            <%= link_to 'Show', job, class:'btn btn-default btn-xs' %>
+            <%= link_to 'Edit', edit_job_path(job), class:'btn btn-default btn-xs' %>
+            <%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' }, class:'btn btn-default btn-xs' %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
 
 <br>
 

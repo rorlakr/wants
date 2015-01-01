@@ -1,45 +1,43 @@
-<p>
-  <strong>Title:</strong>
-  <%= @job.company %>
-</p>
-<p>
-  <strong>Content:</strong>
-  <%= @job.company %>
-</p>
-<p>
-  <strong>Company:</strong>
-  <%= @job.company %>
-</p>
+<h3><%= @job.title %></h3>
+<p>: <%= @job.content %>
 
-<p>
-  <strong>Intro:</strong>
-  <%= @job.intro %>
-</p>
+<div class="panel panel-default">
+  <table class='table table-bordered table-hover table-th-vertical'>
+    <tr>
+      <th><%= t('activerecord.attributes.job.company') %></th>
+      <td><%= @job.company %></td>
+    </tr>
+    <tr>
+      <th><%= t('activerecord.attributes.job.intro') %></th>
+      <td><%= @job.intro %></td>
+    </tr>
 
-<p>
-  <strong>From:</strong>
-  <%= @job.from %>
-</p>
+    <tr>
+      <th><%= t('activerecord.attributes.job.from') %></th>
+      <td><%= @job.from %></td>
+    </tr>
 
-<p>
-  <strong>To:</strong>
-  <%= @job.to %>
-</p>
+    <tr>
+      <th><%= t('activerecord.attributes.job.to') %></th>
+      <td><%= @job.to %></td>
+    </tr>
 
-<p>
-  <strong>Always:</strong>
-  <%= @job.always %>
-</p>
+    <tr>
+      <th><%= t('activerecord.attributes.job.always') %></th>
+      <td><%= @job.always %></td>
+    </tr>
 
-<p>
-  <strong>Contact:</strong>
-  <%= @job.contact %>
-</p>
+    <tr>
+      <th><%= t('activerecord.attributes.job.contact') %></th>
+      <td><%= @job.contact %></td>
+    </tr>
 
-<p>
-  <strong>User:</strong>
-  <%= @job.user %>
-</p>
+    <tr>
+      <th><%= t('activerecord.attributes.job.user') %></th>
+      <td><%= link_to @job.user.email, "mailto:#{@job.user.email}" %></td>
+    </tr>
+  </table>
+</div>
 
-<%= link_to 'Edit', edit_job_path(@job), class: 'btn btn-default' %>
-<%= link_to 'Back', jobs_path, class: 'btn btn-default' %>
+<%= link_to t('views.jobs.show.edit'), edit_job_path(@job), class: 'btn btn-default' %>
+<%= link_to t('views.jobs.show.back'), jobs_path, class: 'btn btn-default' %>

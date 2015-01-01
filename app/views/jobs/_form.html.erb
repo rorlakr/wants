@@ -3,17 +3,31 @@
 
   <div class="form-inputs">
     <%= f.input :title %>
-    <%= f.input :content %>
-    <%= f.input :company %>
-    <%= f.input :intro %>
-    <%= f.input :from, as: :bootstrap_datepicker, input_html: { class: 'form-control'} %>
-    <%= f.input :to, as: :bootstrap_datepicker, input_html: { class: 'form-control'} %>
-    <%= f.input :always %>
-    <%= f.input :contact, placeholder: '전화번호 / 이메일주소' %>
+    <%= f.input :content, input_html:{ rows: 5 } %>
+
+    <fieldset>
+      <legend>상세자료</legend>
+      <%= f.input :company %>
+      <%= f.input :homepage, placeholder: 'http://' %>
+      <%= f.input :intro %>
+      <div class="row">
+
+      <div class="col-md-6">
+        <%= f.input :from, as: :bootstrap_datepicker, input_html: { class: 'form-control', style:'margin-bottom:0;'} %>
+      </div>
+      <div class="col-md-6">
+        <%= f.input :to, as: :bootstrap_datepicker, input_html: { class: 'form-control', style:'margin-bottom:0;'} %>
+      </div>
+      </div>
+      <%= f.input :always %>
+      <%= f.input :contact, placeholder: '전화번호 / 이메일주소' %>
+    </fieldset>
   </div>
 
   <div class="form-actions">
     <%= f.button :submit %>
+    <%= link_to t('views.jobs.form.show'), @job, class: 'btn btn-default' if @job.persisted? %>
+    <%= link_to t('views.jobs.form.back'), jobs_path, class:'btn btn-default' %>
   </div>
 <% end %>
 
