@@ -31,19 +31,19 @@
     <% if @worker.user.profile.dev_web %>
     <tr>
       <th><%= t('activerecord.attributes.profile.dev_web') %></th>
-      <td><%= @worker.user.profile.dev_web %></td>
+      <td><%= boolean_icon @worker.user.profile.dev_web %></td>
     </tr>
     <% end %>
     <% if @worker.user.profile.dev_system %>
     <tr>
       <th><%= t('activerecord.attributes.profile.dev_system') %></th>
-      <td><%= @worker.user.profile.dev_system %></td>
+      <td><%= boolean_icon @worker.user.profile.dev_system %></td>
     </tr>
     <% end %>
     <% if @worker.user.profile.dev_smart %>
     <tr>
       <th><%= t('activerecord.attributes.profile.dev_smart') %></th>
-      <td><%= @worker.user.profile.dev_smart %></td>
+      <td><%= boolean_icon @worker.user.profile.dev_smart %></td>
     </tr>
     <% end %>
     <% if @worker.user.profile.dev_history.present? %>
