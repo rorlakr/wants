@@ -1,0 +1,8 @@
+<% @remote = true %>
+<% if current_user.profile.persisted? %>
+  <%= link_to '프로필 수정', '#', data:{toggle:'modal', target:'#myModal'} %>
+  <%= render "profiles/profile" %>
+<% else %>
+  <%= link_to '프로필 작성', '#', data:{toggle:'modal', target:'#myModal'} %>
+<% end %>
+

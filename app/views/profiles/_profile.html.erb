@@ -1,0 +1,71 @@
+<div class="panel panel-default">
+  <table class='table table-bordered table-hover table-th-vertical'>
+    <tr>
+      <th><%= t('activerecord.attributes.profile.user') %></th>
+      <td><%= @profile.user.email %></td>
+    </tr>
+
+    <tr>
+      <th><%= t('activerecord.attributes.profile.job_status') %></th>
+      <td><%= employee_status @profile.job_status %></td>
+    </tr>
+    <% if @profile.job_status == '5' %>
+    <tr>
+      <th><%= t('activerecord.attributes.profile.job_status_etc') %></th>
+      <td><%= @profile.job_status_etc %></td>
+    </tr>
+    <% end %>
+    <tr>
+      <th><%= t('activerecord.attributes.profile.dev_languages') %></th>
+      <td><%= @profile.dev_languages %></td>
+    </tr>
+    <% if @profile.dev_duration %>
+    <tr>
+      <th><%= t('activerecord.attributes.profile.dev_duration') %></th>
+      <td><%= @profile.dev_duration %></td>
+    </tr>
+    <% end %>
+    <% if @profile.dev_web %>
+    <tr>
+      <th><%= t('activerecord.attributes.profile.dev_web') %></th>
+      <td><%= @profile.dev_web %></td>
+    </tr>
+    <% end %>
+    <% if @profile.dev_system %>
+    <tr>
+      <th><%= t('activerecord.attributes.profile.dev_system') %></th>
+      <td><%= @profile.dev_system %></td>
+    </tr>
+    <% end %>
+    <% if @profile.dev_smart %>
+    <tr>
+      <th><%= t('activerecord.attributes.profile.dev_smart') %></th>
+      <td><%= @profile.dev_smart %></td>
+    </tr>
+    <% end %>
+    <% if !@profile.dev_history.blank? %>
+    <tr>
+      <th><%= t('activerecord.attributes.profile.dev_history') %></th>
+      <td><%= @profile.dev_history %></td>
+    </tr>
+    <% end %>
+    <% if !@profile.community_activity.blank? %>
+    <tr>
+      <th><%= t('activerecord.attributes.profile.community_activity') %></th>
+      <td><%= @profile.community_activity %></td>
+    </tr>
+    <% end %>
+    <% if !@profile.book_author.blank? %>
+    <tr>
+      <th><%= t('activerecord.attributes.profile.book_author') %></th>
+      <td><%= @profile.book_author %></td>
+    </tr>
+    <% end %>
+    <% if !@profile.book_trans.blank? %>
+    <tr>
+      <th><%= t('activerecord.attributes.profile.book_trans') %></th>
+      <td><%= @profile.book_trans %></td>
+    </tr>
+    <% end %>
+  </table>
+</div>

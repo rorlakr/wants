@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
   before_action :configure_permitted_parameters, if: :devise_controller?
+  before_action :counts
   layout :layout_by_resource
 
   protected
@@ -17,5 +18,10 @@ class ApplicationController < ActionController::Base
     else
       'application'
     end
+  end
+
+  def counts
+    @jobs_count = Job.count
+    @workers_count = Worker.count
   end
 end

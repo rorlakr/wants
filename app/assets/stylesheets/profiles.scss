@@ -1,0 +1,12 @@
+// Place all the styles related to the profiles controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#view_profile {
+  overflow: auto;
+  .panel {
+    margin-bottom: .5em !important;
+    margin-top: 1em !important;
+    margin-right:1em !important;
+  }
+}

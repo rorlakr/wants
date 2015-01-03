@@ -1,0 +1,10 @@
+<h1><%= @profile.alias_name %></h1>
+<p>: <%= @profile.homepage %></p>
+
+<%= render 'profiles/profile' %>
+
+<div class="form-actions">
+  <%= link_to t('views.workers.show.edit'), edit_user_profile_path(current_user), class: 'btn btn-default' %>
+  <%= link_to t('views.profile.show.prev'), :back, class: 'btn btn-default' %>
+  <%= link_to t('views.profile.show.destroy'), user_profile_path(current_user), method: :delete, data:{confirm:"Are you sure?"}, class: 'btn btn-default' %>
+</div>

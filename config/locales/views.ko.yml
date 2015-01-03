@@ -21,6 +21,9 @@ ko:
       confirmations:
         resend_confirmation: 확인 안내문 이메일 재발송
         resend_confirm: 확인 안내문 재발송
+    pages:
+      jobs_label_html: "구인<br />(%{jobs_count})"
+      workers_label_html: "구직<br />(%{workers_count})"
     jobs:
       index:
         listing_jobs: 일꺼리
@@ -31,3 +34,23 @@ ko:
       form:
         back: 목록
         show: 보기
+    workers:
+      index:
+        listing_workers: 일할사람
+        new_worker: 일할사람 등록
+      new:
+        new_worker: 구직신청서 작성
+      edit:
+        editing_worker: 구직신청서 수정
+      show:
+        back: 목록
+        edit: 수정
+      form:
+        back: 목록
+        show: 보기
+    profile:
+      show:
+        prev: 뒤로
+        back: 목록
+        edit: 수정
+        destroy: 삭제

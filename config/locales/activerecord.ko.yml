@@ -17,3 +17,28 @@ ko:
         always: 상시구인
         contact: 연락처
         user: 작성자
+      worker:
+        title: 글제목
+        content: 글내용
+      profile:
+        alias_name: 유저명
+        phone: 전화번호
+        homepage: 홈페이지주소
+        twitter: 트위터계정
+        facebook: 페이스북계정
+        linkedin: 링크인계정
+        salary_requirement: 희망연봉
+        job_status: 현고용상태
+        job_status_etc: 현고용상태(기타)
+        dev_languages: 개발언어 및 프레임워크
+        dev_duration: 개발경력(년)
+        dev_web: 웹개발 가능함
+        dev_system: 시스템 엔지니어링 가능함
+        dev_smart: 스마트 앱개발 가능함
+        dev_history: 개발경력
+        community_activity: 커뮤니티활동
+        book_author: 저서
+        book_trans: 번역서
+        user: 작성자
+
+

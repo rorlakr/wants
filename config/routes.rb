@@ -1,10 +1,16 @@
 Rails.application.routes.draw do
 
+  devise_for :users
+
+  resources :users do
+    resource :profile
+  end
+  resources :workers
+
   resources :jobs
 
   get 'pages/welcome' => 'high_voltage/pages#show', id: 'welcome'
 
-  devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

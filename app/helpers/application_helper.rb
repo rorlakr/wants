@@ -14,9 +14,14 @@ module ApplicationHelper
     end
     nil
   end
-end
 
-# <div class="alert alert-warning alert-dismissible" role="alert">
-#   <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-#   <strong>Warning!</strong> Better check yourself, you're not looking too good.
-# </div>
+  def employee_status(value)
+    ret = [ ['IT 개발업체 재직 중...', '1'], ['프리랜서','2'],['타직종에서 재직 중...','3'],['취업 준비 중...','4'],['기타','9']].select { | emp | emp[1] == value }
+    if ret.size > 0
+      ret[0][0]
+    else
+      "N/A"
+    end
+  end
+
+end

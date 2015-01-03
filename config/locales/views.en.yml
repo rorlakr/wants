@@ -31,3 +31,6 @@ en:
       form:
         back: List
         show: Show
+    workers:
+      index:
+        listing_workers: Listing Workers

@@ -1,0 +1,37 @@
+<%= simple_form_for(@worker) do |f| %>
+  <%= f.error_notification %>
+
+  <div class='alert alert-warning'>
+    <%= icon('info-circle', '구직신청서를 작성하시면 상대방에게 개인 프로파일정보가 공개됩니다.') %>
+    <div style='padding-left:1em;margin-top:.5em;'>
+      : <span id='view_profile'><%= render 'profiles/view_profile' %></span>
+    </div>
+  </div>
+  <div class="form-inputs">
+    <%= f.input :title, placeholder: '안녕하세요.' %>
+    <%= f.input :content, placeholder: '조속한 시일내에 최적의 직장을 구하기를 기원합니다.', input_html: { rows: 5 } %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+    <%= link_to t('views.workers.form.show'), @worker, class: 'btn btn-default' if @worker.persisted? %>
+    <%= link_to t('views.workers.form.back'), workers_path, class:'btn btn-default' %>
+  </div>
+<% end %>
+
+<div class="modal fade" id='myModal'>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">프로파일</h4>
+      </div>
+      <div id="view_profile_form" class="modal-body">
+        <%= render partial: 'profiles/form' %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

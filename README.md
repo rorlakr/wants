@@ -24,10 +24,40 @@
 
 이 서비스의 구인구직 데이터는 `RORLAB 주간뉴스`에 광고한다.
 
+
+### 0. 프로파일(Profile)
+* 유저명 (alias_name)
+* 전화번호 (phone)
+* 트위터 계정 (twitter)
+* 페이스북 계정 (facebook)
+* 링크인 계정 (linkedin)
+* 개인홈페이지 (homepage)
+* 희망연봉 (salary_require)
+* 현재상태 (job_status)
+  * IT 개발업체 재직중
+  * 프리랜서
+  * 타직종에 재직중
+  * 취업 준비중
+  * 기타 : 기술항목
+* 프로그래밍 언어 dev_languages (Taglist)
+  * C, C++, C#, Java, Python, Ruby, Object-C, Swift
+  * .Net, Spring, Django, Ruby on Rails, Phalcon
+* 개발경력
+  * ?년차 개발자 : dev_duration
+  * 웹개발 dev_web : boolean
+  * 시스템 엔지니어링 : dev_system : boolean
+  * 스마트디바이스 네이티브 앱개발 : dev_smart: boolean
+* 개발프로잭트 상세  (dev_history)
+* 커뮤니티 활동 (community_acitivy)
+* 저서 (book_author)
+* 번역서 (book_trans)
+
 ### 1. 구인기능(Job)
 
 등록할 항목
 
+* 글제목
+* 글내용
 * 구인회사명
 * 작성자
 * 작성일자/변경일자
@@ -41,5 +71,5 @@
 ### 2. 구직기능(Worker)
 
 등록할 항목
-
-*
+* title
+* content

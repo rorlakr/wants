@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150101110752) do
+ActiveRecord::Schema.define(version: 20150102042219) do
 
   create_table "jobs", force: :cascade do |t|
     t.string   "company",                    null: false
@@ -29,6 +29,32 @@ ActiveRecord::Schema.define(version: 20150101110752) do
   end
 
   add_index "jobs", ["user_id"], name: "index_jobs_on_user_id"
+
+  create_table "profiles", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "alias_name",                   null: false
+    t.string   "homepage"
+    t.string   "phone",                        null: false
+    t.string   "twitter"
+    t.string   "facebook"
+    t.string   "linkedin"
+    t.string   "job_status",         limit: 1
+    t.string   "job_status_etc"
+    t.string   "dev_languages"
+    t.string   "dev_duration"
+    t.boolean  "dev_web"
+    t.boolean  "dev_system"
+    t.boolean  "dev_smart"
+    t.text     "dev_history"
+    t.text     "community_activity"
+    t.text     "book_author"
+    t.text     "book_trans"
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+  end
+
+  add_index "profiles", ["alias_name"], name: "index_profiles_on_alias_name", unique: true
+  add_index "profiles", ["user_id"], name: "index_profiles_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -52,5 +78,15 @@ ActiveRecord::Schema.define(version: 20150101110752) do
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+
+  create_table "workers", force: :cascade do |t|
+    t.string   "title",      null: false
+    t.text     "content",    null: false
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "workers", ["user_id"], name: "index_workers_on_user_id"
 
 end

@@ -1,0 +1,38 @@
+<%= simple_form_for([@profile.user, @profile], remote: @remote, url: user_profile_path(current_user) ) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :alias_name %>
+    <%= f.input :phone %>
+    <%= f.input :homepage, placeholder: 'http://' %>
+    <div class="row">
+      <div class="col-md-4"><%= f.input :twitter %></div>
+      <div class="col-md-4"><%= f.input :facebook %></div>
+      <div class="col-md-4"><%= f.input :linkedin %></div>
+    </div>
+
+    <fieldset>
+      <legend>상세내용</legend>
+      <%= f.input :job_status, collection: [ ['IT 개발업체 재직 중...', 1], ['프리랜서',2],['타직종에서 재직 중...',3],['취업 준비 중...',4],['기타',9]], include_blank: '선택하세요.' %>
+      <%= f.input :job_status_etc, placeholder: '현고용상태에서 기타를 선택한 경우에만 입력하십시요.' %>
+      <fieldset style='margin-bottom:1em !important;'>
+        <legend>개발이력</legend>
+      <%= f.input :dev_languages, placeholder: '콤마(,)로 구분하여 입력하십시요' %>
+      <%= f.input :dev_duration, placeholder: '예) 5년' %>
+      <%= f.input :dev_web %>
+      <%= f.input :dev_system %>
+      <%= f.input :dev_smart %>
+      <%= f.input :dev_history, placeholder: '현재까지 개발한 프로젝트가 있으면 상세하게 기술하십시요.', input_html: { rows: 5 } %>
+      </fieldset>
+      <%= f.input :community_activity, placeholder: 'IT관련 커뮤니티 활동이 있으면 입력하십시요.', input_html: { rows: 5 } %>
+      <%= f.input :book_author, placeholder: '일인 또는 공동저술한 책이 있으면 입력하십시요. (eBook 포함)', input_html: { rows: 5 } %>
+      <%= f.input :book_trans, placeholder: '외국서적을 번역하여 출판한 것이 있으면 입력하십시요. (eBook 포함)', input_html: { rows: 5 } %>
+    </fieldset>
+  </div>
+
+    <div class="form-actions">
+    <%= f.button :submit %>
+    <%= link_to t('views.workers.form.show'), user_profile_path(current_user), class: 'btn btn-default' if @profile.persisted? && !@remote %>
+    <%= link_to t('views.profile.show.destroy'), user_profile_path(current_user), method: :delete, data:{confirm:"Are you sure?"}, remote: @remote, class: 'btn btn-default' if @profile.persisted? %>
+  </div>
+<% end %>
