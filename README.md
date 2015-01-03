@@ -51,6 +51,7 @@
 * 커뮤니티 활동 (community_acitivy)
 * 저서 (book_author)
 * 번역서 (book_trans)
+* 프로필 정보공개 (published)
 
 ### 1. 구인기능(Job)
 

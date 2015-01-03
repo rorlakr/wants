@@ -32,9 +32,9 @@ ActiveRecord::Schema.define(version: 20150102042219) do
 
   create_table "profiles", force: :cascade do |t|
     t.integer  "user_id"
-    t.string   "alias_name",                   null: false
+    t.string   "alias_name",                                   null: false
     t.string   "homepage"
-    t.string   "phone",                        null: false
+    t.string   "phone",                                        null: false
     t.string   "twitter"
     t.string   "facebook"
     t.string   "linkedin"
@@ -42,15 +42,16 @@ ActiveRecord::Schema.define(version: 20150102042219) do
     t.string   "job_status_etc"
     t.string   "dev_languages"
     t.string   "dev_duration"
-    t.boolean  "dev_web"
-    t.boolean  "dev_system"
-    t.boolean  "dev_smart"
+    t.boolean  "dev_web",                      default: false
+    t.boolean  "dev_system",                   default: false
+    t.boolean  "dev_smart",                    default: false
     t.text     "dev_history"
     t.text     "community_activity"
     t.text     "book_author"
     t.text     "book_trans"
-    t.datetime "created_at",                   null: false
-    t.datetime "updated_at",                   null: false
+    t.boolean  "published",                    default: false
+    t.datetime "created_at",                                   null: false
+    t.datetime "updated_at",                                   null: false
   end
 
   add_index "profiles", ["alias_name"], name: "index_profiles_on_alias_name", unique: true

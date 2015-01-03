@@ -40,5 +40,6 @@ ko:
         book_author: 저서
         book_trans: 번역서
         user: 작성자
+        published: 프로필 정보공개
 
 

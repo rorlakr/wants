@@ -64,6 +64,6 @@ class ProfilesController < ApplicationController
   private
 
   def profile_params
-    params.require(:profile).permit( :alias_name, :phone, :homepage, :twitter, :facebook, :linkedin, :salary_requirement, :job_status, :job_status_etc, :dev_languages, :dev_duration, :dev_web, :dev_system, :dev_smart, :dev_history, :community_activity, :book_author, :book_trans)
+    params.require(:profile).permit( :alias_name, :phone, :homepage, :twitter, :facebook, :linkedin, :salary_requirement, :job_status, :job_status_etc, :dev_languages, :dev_duration, :dev_web, :dev_system, :dev_smart, :dev_history, :community_activity, :book_author, :book_trans, :published)
   end
 end

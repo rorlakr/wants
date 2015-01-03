@@ -24,4 +24,8 @@ module ApplicationHelper
     end
   end
 
+  def boolean_icon( bool )
+    bool ? icon('check') : icon('remove')
+  end
+
 end

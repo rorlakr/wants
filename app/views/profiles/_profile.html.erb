@@ -28,7 +28,7 @@
     <% if @profile.dev_web %>
     <tr>
       <th><%= t('activerecord.attributes.profile.dev_web') %></th>
-      <td><%= @profile.dev_web %></td>
+      <td><%= boolean_icon @profile.dev_web %></td>
     </tr>
     <% end %>
     <% if @profile.dev_system %>
