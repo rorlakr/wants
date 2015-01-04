@@ -1,0 +1,2 @@
+$("#comments_<%= @commentable.class.name.downcase %>_<%= @commentable.id %>").append("<%=j render('comments/comment', comment:@comment) %>");
+$("#comment_form_<%= @commentable.class.name.downcase %>_<%= @commentable.id %> form")[0].reset();

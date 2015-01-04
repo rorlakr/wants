@@ -6,4 +6,16 @@
     <%= published_icon engage.shared_profile %> |
     <%= link_to icon('remove', '삭제'), [engage.engageable, engage], method: :delete, remote: true, data:{confirm:'Are you sure?'} %>
   </div>
+
+  <div class="comment_lists">
+    <h4>Comments :</h4>
+    <ul id='comments_engage_<%= engage.id %>' class="comments">
+      <%= render engage.comments %>
+    </ul>
+  </div>
+
+  <div id="comment_form_engage_<%= engage.id %>" class="comment_form_engage">
+    <%= render 'comments/form', commentable: engage %>
+  </div>
+
 </li>

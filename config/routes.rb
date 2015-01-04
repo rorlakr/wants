@@ -1,16 +1,27 @@
 Rails.application.routes.draw do
 
+  get 'comments/create'
+
+  get 'comments/destroy'
+
   devise_for :users
 
   resources :users do
     resource :profile
   end
 
+  concern :commentable do
+    resources :comments, only: [:create, :destroy]
+  end
+
   concern :engageable do
     resources :engages, only: [:create, :destroy, :update]
   end
-  resources :workers, concerns: :engageable
   resources :jobs, concerns: :engageable
+  resources :workers, concerns: :engageable
+  resources :jobs, concerns: :commentable
+  resources :workers, concerns: :commentable
+  resources :engages, concerns: :commentable
 
   get 'pages/welcome' => 'high_voltage/pages#show', id: 'welcome'
 

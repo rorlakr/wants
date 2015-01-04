@@ -1,0 +1,4 @@
+<%= simple_form_for [commentable, commentable.comments.build], remote: true do | f | %>
+  <%= f.input :content, input_html: { class: 'comment_text'} %>
+  <%= f.submit class:'btn btn-default btn-xs' %>
+<% end %>

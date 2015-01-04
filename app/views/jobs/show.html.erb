@@ -64,3 +64,14 @@
   <%= render 'engages/form' %>
 </div>
 
+<div class="comments_for_job">
+  <h3>Comments :</h3>
+  <ul id='comments_job_<%= @job.id %>'>
+    <%= render @job.comments %>
+  </ul>
+</div>
+
+<div id='comment_form_job_<%= @job.id %>' class="comment_form">
+  <%= render 'comments/form', commentable: @job %>
+</div>
+
