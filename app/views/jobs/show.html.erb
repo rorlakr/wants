@@ -50,4 +50,17 @@
 <div class="form-actions">
   <%= link_to t('views.jobs.show.edit'), edit_job_path(@job), class: 'btn btn-default' %>
   <%= link_to t('views.jobs.show.back'), jobs_path, class: 'btn btn-default' %>
+  <%= link_to "지원", '#', class: 'btn btn-default' %>
 </div>
+
+<div class='engages'>
+  <h3>지원현황</h3>
+  <ol id='job_<%= @job.id %>'>
+    <%= render @job.engages %>
+  </ul>
+</div>
+
+<div class='engage_form'>
+  <%= render 'engages/form' %>
+</div>
+

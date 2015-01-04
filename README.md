@@ -74,3 +74,10 @@
 등록할 항목
 * title
 * content
+
+### 3. 구인/구직교섭(Engage)
+
+등록한 항목
+
+* 교섭자의 프로필 공유여부 shared_profile
+* 글내용 content

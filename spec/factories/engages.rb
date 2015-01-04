@@ -2,6 +2,7 @@
 
 FactoryGirl.define do
   factory :engage do
+    engageable nil
     user nil
     shared_profile false
     content "MyText"

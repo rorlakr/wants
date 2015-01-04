@@ -1,0 +1,9 @@
+<li id='engage_<%= engage.id %>' class='engaged'>
+  <%= engage.content %>
+  <div class='status'>
+    <%= engage.user.try(:email) %> |
+    <%= time_ago_in_words engage.created_at %>전 |
+    <%= published_icon engage.shared_profile %> |
+    <%= link_to icon('remove', '삭제'), [engage.engageable, engage], method: :delete, remote: true, data:{confirm:'Are you sure?'} %>
+  </div>
+</li>

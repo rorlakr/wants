@@ -11,9 +11,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150103035516) do
+ActiveRecord::Schema.define(version: 20150103040957) do
 
-  create_table "engages", force: :cascade do |t|
+  create_table "applies", force: :cascade do |t|
     t.integer  "user_id"
     t.boolean  "shared_profile", default: false
     t.text     "content"
@@ -21,6 +21,19 @@ ActiveRecord::Schema.define(version: 20150103035516) do
     t.datetime "updated_at",                     null: false
   end
 
+  add_index "applies", ["user_id"], name: "index_applies_on_user_id"
+
+  create_table "engages", force: :cascade do |t|
+    t.integer  "engageable_id"
+    t.string   "engageable_type"
+    t.integer  "user_id"
+    t.boolean  "shared_profile",  default: false
+    t.text     "content"
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
+  end
+
+  add_index "engages", ["engageable_type", "engageable_id"], name: "index_engages_on_engageable_type_and_engageable_id"
   add_index "engages", ["user_id"], name: "index_engages_on_user_id"
 
   create_table "jobs", force: :cascade do |t|

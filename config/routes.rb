@@ -5,9 +5,12 @@ Rails.application.routes.draw do
   resources :users do
     resource :profile
   end
-  resources :workers
 
-  resources :jobs
+  concern :engageable do
+    resources :engages, only: [:create, :destroy, :update]
+  end
+  resources :workers, concerns: :engageable
+  resources :jobs, concerns: :engageable
 
   get 'pages/welcome' => 'high_voltage/pages#show', id: 'welcome'
 

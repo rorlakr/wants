@@ -29,7 +29,7 @@ module ApplicationHelper
   end
 
   def published_icon( bool )
-    bool ? icon('check', '프로필정보 공개') : icon('remove', '프로필정보 비공개')
+    bool ? icon('unlock', '프로필정보') : icon('lock', '프로필정보')
   end
 
 end
