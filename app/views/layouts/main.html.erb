@@ -1,12 +1,32 @@
 <%= content_for :main_content do %>
-    <div class="left-sidebar col-md-3">Books</div>
+    <div class="left-sidebar col-md-3">
+      <p><%= link_to '일꺼리', jobs_path %> > <%= @all_jobs.size %></p>
+      <ul class='engage_list'>
+      <% @all_jobs.limit(10).each do | job | %>
+        <li><%= link_to job.title, job_path(job) %></li>
+      <% end %>
+      </ul>
+      <% if @all_jobs.size > 10 %>
+        <p><%= link_to '더보기', jobs_path %></p>
+      <% end %>
+    </div>
     <div class="main-body col-md-6">
       <%= flash_messages %>
 
       <%= yield %>
 
     </div>
-    <div class="right-sidebar col-md-3">Companies</div>
+    <div class="right-sidebar col-md-3">
+      <p><%= link_to '일할사람', workers_path %> > <%= @all_workers.size %></p>
+      <ul class='engage_list'>
+      <% @all_workers.limit(10).each do | worker | %>
+        <li><%= link_to worker.title, worker_path(worker) %></li>
+      <% end %>
+      </ul>
+      <% if @all_workers.size > 10 %>
+        <p><%= link_to '더보기', workers_path %></p>
+      <% end %>
+    </div>
 <% end %>
 
 <%= render template: 'layouts/application' %>

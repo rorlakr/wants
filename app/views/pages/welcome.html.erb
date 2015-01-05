@@ -25,9 +25,9 @@
 
 <div class='main_link row'>
   <div class='jobs col-md-6'>
-    <%= link_to t('views.pages.jobs_label_html', jobs_count: @jobs_count), jobs_path %>
+    <%= link_to t('views.pages.jobs_label_html', jobs_count: @all_jobs.size), jobs_path %>
   </div>
   <div class='workers col-md-6'>
-    <%= link_to t('views.pages.workers_label_html', workers_count: @workers_count), workers_path %>
+    <%= link_to t('views.pages.workers_label_html', workers_count: @all_workers.size), workers_path %>
   </div>
 </div>

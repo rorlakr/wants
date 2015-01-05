@@ -21,7 +21,7 @@ class ApplicationController < ActionController::Base
   end
 
   def counts
-    @jobs_count = Job.count
-    @workers_count = Worker.count
+    @all_jobs = Job.all
+    @all_workers = Worker.all
   end
 end

@@ -10,6 +10,7 @@ class WorkersController < ApplicationController
   end
 
   def show
+    @profile = @worker.user.profile
     respond_with(@worker)
   end
 

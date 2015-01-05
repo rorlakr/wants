@@ -28,6 +28,10 @@ ko:
       index:
         listing_jobs: 일꺼리
         new_job: 일꺼리 등록
+      new:
+        new_job: 일꺼리 등록
+      edit:
+        editing_job: 일꺼리 수정
       show:
         back: 목록
         edit: 수정

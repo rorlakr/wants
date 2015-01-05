@@ -1,77 +1,7 @@
 <h1><%= @worker.title %></h1>
-<p>: <%= @worker.content %></p>
+<p>: <%= @worker.content %> <%= published_icon(@profile.published) %></p>
 
-<div class="panel panel-default">
-  <table class='table table-bordered table-hover table-th-vertical'>
-    <tr>
-      <th><%= t('activerecord.attributes.profile.user') %></th>
-      <td><%= @worker.user.email %></td>
-    </tr>
-
-    <tr>
-      <th><%= t('activerecord.attributes.profile.job_status') %></th>
-      <td><%= employee_status @worker.user.profile.job_status %></td>
-    </tr>
-    <% if @worker.user.profile.job_status == '5' %>
-    <tr>
-      <th><%= t('activerecord.attributes.profile.job_status_etc') %></th>
-      <td><%= @worker.user.profile.job_status_etc %></td>
-    </tr>
-    <% end %>
-    <tr>
-      <th><%= t('activerecord.attributes.profile.dev_languages') %></th>
-      <td><%= @worker.user.profile.dev_languages %></td>
-    </tr>
-    <% if @worker.user.profile.dev_duration.present? %>
-    <tr>
-      <th><%= t('activerecord.attributes.profile.dev_duration') %></th>
-      <td><%= @worker.user.profile.dev_duration %></td>
-    </tr>
-    <% end %>
-    <% if @worker.user.profile.dev_web %>
-    <tr>
-      <th><%= t('activerecord.attributes.profile.dev_web') %></th>
-      <td><%= boolean_icon @worker.user.profile.dev_web %></td>
-    </tr>
-    <% end %>
-    <% if @worker.user.profile.dev_system %>
-    <tr>
-      <th><%= t('activerecord.attributes.profile.dev_system') %></th>
-      <td><%= boolean_icon @worker.user.profile.dev_system %></td>
-    </tr>
-    <% end %>
-    <% if @worker.user.profile.dev_smart %>
-    <tr>
-      <th><%= t('activerecord.attributes.profile.dev_smart') %></th>
-      <td><%= boolean_icon @worker.user.profile.dev_smart %></td>
-    </tr>
-    <% end %>
-    <% if @worker.user.profile.dev_history.present? %>
-    <tr>
-      <th><%= t('activerecord.attributes.profile.dev_history') %></th>
-      <td><%= @worker.user.profile.dev_history %></td>
-    </tr>
-    <% end %>
-    <% if @worker.user.profile.community_activity.present? %>
-    <tr>
-      <th><%= t('activerecord.attributes.profile.community_activity') %></th>
-      <td><%= @worker.user.profile.community_activity %></td>
-    </tr>
-    <% end %>
-    <% if @worker.user.profile.book_author.present? %>
-    <tr>
-      <th><%= t('activerecord.attributes.profile.book_author') %></th>
-      <td><%= @worker.user.profile.book_author %></td>
-    </tr>
-    <% end %>
-    <% if @worker.user.profile.book_trans.present? %>
-    <tr>
-      <th><%= t('activerecord.attributes.profile.book_trans') %></th>
-      <td><%= @worker.user.profile.book_trans %></td>
-    </tr>
-    <% end %>
-  </table>
-</div>
+<%= render 'profiles/profile' if @profile.published %>
 
 <div class="form-actions">
   <%= link_to t('views.workers.show.edit'), edit_worker_path(@worker), class: 'btn btn-default' %>
