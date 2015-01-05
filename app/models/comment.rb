@@ -1,4 +1,9 @@
 class Comment < ActiveRecord::Base
+
+  resourcify
+  include Authority::Abilities
+  self.authorizer = BasicAuthorizer
+
   belongs_to :commentable, polymorphic: true
   belongs_to :user
 

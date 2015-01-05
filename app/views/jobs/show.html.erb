@@ -48,7 +48,9 @@
 </div>
 
 <div class="form-actions">
-  <%= link_to t('views.jobs.show.edit'), edit_job_path(@job), class: 'btn btn-default' %>
+  <% if current_user.can_update? @job %>
+    <%= link_to t('views.jobs.show.edit'), edit_job_path(@job), class: 'btn btn-default' %>
+  <% end %>
   <%= link_to t('views.jobs.show.back'), jobs_path, class: 'btn btn-default' %>
 </div>
 

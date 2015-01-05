@@ -1,10 +1,12 @@
 <h1><%= @worker.title %></h1>
-<p>: <%= @worker.content %> <%= published_icon(@profile.published) %></p>
+<p>: <%= @worker.content %> <%= published_icon(@worker.user.profile.published) %></p>
 
-<%= render 'profiles/profile' if @profile.published %>
+<%= render 'profiles/profile', profile: @worker.user.profile if @worker.user.profile.published %>
 
 <div class="form-actions">
-  <%= link_to t('views.workers.show.edit'), edit_worker_path(@worker), class: 'btn btn-default' %>
+  <% if current_user.can_update? @worker %>
+    <%= link_to t('views.workers.show.edit'), edit_worker_path(@worker), class: 'btn btn-default' %>
+  <% end %>
   <%= link_to t('views.workers.show.back'), workers_path, class: 'btn btn-default' %>
 </div>
 

@@ -2,7 +2,7 @@
 <%= published_icon current_user.profile.published %>상태,
 <% if current_user.profile.persisted? %>
   <%= link_to '프로필 수정', '#', data:{toggle:'modal', target:'#myModal'} %>
-  <%= render "profiles/profile" if current_user.profile.published %>
+  <%= render "profiles/profile", profile: current_user.profile if current_user.profile.published %>
 <% else %>
   <%= link_to '프로필 작성', '#', data:{toggle:'modal', target:'#myModal'} %>
 <% end %>

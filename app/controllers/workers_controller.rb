@@ -10,7 +10,6 @@ class WorkersController < ApplicationController
   end
 
   def show
-    @profile = @worker.user.profile
     respond_with(@worker)
   end
 
@@ -26,6 +25,7 @@ class WorkersController < ApplicationController
   end
 
   def edit
+    authorize_action_for @worker
     @remote = true
     if current_user.profile
       @profile = current_user.profile
@@ -35,6 +35,7 @@ class WorkersController < ApplicationController
   end
 
   def create
+    authorize_action_for @worker
     @worker = Worker.new(worker_params)
     @worker.user = current_user
     @worker.save
@@ -42,11 +43,13 @@ class WorkersController < ApplicationController
   end
 
   def update
+    authorize_action_for @worker
     @worker.update(worker_params)
     respond_with(@worker)
   end
 
   def destroy
+    authorize_action_for @worker
     @worker.destroy
     respond_with(@worker)
   end

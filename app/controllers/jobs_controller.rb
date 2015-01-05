@@ -1,6 +1,7 @@
 class JobsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_job, only: [:show, :edit, :update, :destroy]
+
   layout 'main'
 
   respond_to :html
@@ -20,21 +21,25 @@ class JobsController < ApplicationController
   end
 
   def edit
+    authorize_action_for @job
   end
 
   def create
     @job = Job.new(job_params)
+    authorize_action_for Job
     @job.user = current_user
     @job.save
     respond_with(@job)
   end
 
   def update
+    authorize_action_for @job
     @job.update(job_params)
     respond_with(@job)
   end
 
   def destroy
+    authorize_action_for @job
     @job.destroy
     respond_with(@job)
   end

@@ -9,7 +9,6 @@
         <th>자료작업</th>
       </tr>
     </thead>
-
     <tbody>
       <% @jobs.each do |job| %>
         <tr>
@@ -17,8 +16,10 @@
           <td><%= time_ago_in_words job.updated_at %>전</td>
           <td class='col-md-3 center'>
             <%= link_to t('views.common.show'), job, class:'btn btn-default btn-xs' %>
-            <%= link_to t('views.common.edit'), edit_job_path(job), class:'btn btn-default btn-xs' %>
-            <%= link_to t('views.common.destroy'), job, method: :delete, data: { confirm: 'Are you sure?' }, class:'btn btn-default btn-xs' %>
+            <% if current_user.can_update? job %>
+              <%= link_to t('views.common.edit'), edit_job_path(job), class:'btn btn-default btn-xs' %>
+              <%= link_to t('views.common.destroy'), job, method: :delete, data: { confirm: 'Are you sure?' }, class:'btn btn-default btn-xs' %>
+            <% end %>
           </td>
         </tr>
       <% end %>

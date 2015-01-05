@@ -9,7 +9,7 @@ module ApplicationHelper
         concat(content_tag(:button, class: "close", data: { dismiss: 'alert', aria: { label:'Close' } }) do
           concat(content_tag(:span, raw('&times;'), aria: { hidden: 'true'}))
         end)
-        concat message
+        concat raw(message)
       end)
     end
     nil

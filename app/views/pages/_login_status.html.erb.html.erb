@@ -1,0 +1,16 @@
+<div class='login-status'>
+  <% if user_signed_in? %>
+    <%= current_user.email %>(<%= current_user.roles.map(&:name).join(', ') %>)로 로그인하셨습니다.
+    <% if current_user.profile %>
+      <%= link_to "프로파일보기", user_profile_path(current_user) %>
+    <% else %>
+      <%= link_to "프로파일작성", new_user_profile_path(current_user) %>
+    <% end %> |
+    <%= link_to "Log out", destroy_user_session_path, method: :delete, data: { confirm: "Are you sure?"} %>
+  <% else %>
+    <%= link_to "Log in", new_user_session_path %> |
+    <%= link_to "Sign up", new_user_session_path %> |
+    <%= link_to "Password lost?", new_user_password_path %> |
+    <%= link_to "Confirm email", new_user_confirmation_path %>
+  <% end %>
+</div>

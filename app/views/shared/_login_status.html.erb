@@ -1,0 +1,14 @@
+<div class='login-status'>
+  <% if user_signed_in? %>
+    <%= link_to "#{current_user.email}(#{current_user.roles.map(&:name).join(', ')})", edit_user_registration_path %> |
+    <% if current_user.profile %>
+      <%= link_to "나의 프로필", user_profile_path(current_user) %>
+    <% else %>
+      <%= link_to "프로필작성", new_user_profile_path(current_user) %>
+    <% end %> |
+    <%= link_to "Log out", destroy_user_session_path, method: :delete, data: { confirm: "Are you sure?"} %>
+  <% else %>
+    <%= link_to "Log in", new_user_session_path %> |
+    <%= link_to "Sign up", new_user_session_path %>
+  <% end %>
+</div>
