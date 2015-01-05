@@ -11,4 +11,9 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_one :profile, dependent: :destroy
+  has_many :engages, dependent: :destroy
+  has_many :comments, dependent: :destroy
+  has_many :jobs, dependent: :destroy
+  has_many :works, dependent: :destroy
+
 end

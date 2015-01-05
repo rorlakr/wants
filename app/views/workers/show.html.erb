@@ -17,8 +17,8 @@
   </ul>
 </div>
 
-<div class='engage_form'>
-  <%= render 'engages/form', {engageable: @worker, title: "인터뷰"} %>
+<div id="engage_form_<%= @worker.id %>">
+  <%= render 'engages/engage_form', engageable: @worker %>
 </div>
 
 <div class="comments_for_worker">

@@ -61,8 +61,8 @@
   </ul>
 </div>
 
-<div class='engage_form'>
-  <%= render 'engages/form', {engageable: @job, title: '지원'} %>
+<div id="engage_form_<%= @job.id %>">
+  <%= render 'engages/engage_form', engageable: @job %>
 </div>
 
 <div class="comments_for_job">

@@ -1,1 +1,2 @@
 $("#engage_<%= @engage.id%>").remove();
+$('#engage_form_<%= @engageable.id%>').html("<%=j render('engages/engage_form', engageable: @engageable) %>")

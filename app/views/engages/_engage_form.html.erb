@@ -1,0 +1,5 @@
+<% if current_user.can_create? Engage, for: engageable %>
+  <div class='engage_form'>
+    <%= render 'engages/form', {engageable: engageable, title: '지원'} %>
+  </div>
+<% end %>

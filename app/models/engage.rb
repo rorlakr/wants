@@ -2,7 +2,6 @@ class Engage < ActiveRecord::Base
 
   resourcify
   include Authority::Abilities
-  self.authorizer = BasicAuthorizer
 
   belongs_to :engageable, polymorphic: true
   has_many :comments, as: :commentable

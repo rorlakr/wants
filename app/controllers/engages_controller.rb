@@ -4,6 +4,7 @@ class EngagesController < ApplicationController
   def create
     @engageable = params.keys.last.split('_')[0].capitalize.constantize.find params.values.last.to_i
     @engage = @engageable.engages.new(engage_params)
+    authorize_action_for @engage, for: @engageable
     @engage.user = current_user
     @engage.save
 
