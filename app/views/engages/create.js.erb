@@ -1,2 +1,23 @@
-$("#job_<%= @engageable.id%>").append("<%=j render('engages/engage', engage: @engage) %>");
-$('.engage_form form')[0].reset();
+<% if @engage.errors.size.zero? %>
+  $("ol#<%= @engageable.class.name.downcase%>_<%= @engageable.id%>").append("<%=j render('engages/engage', engage: @engage) %>");
+  $('.engage_form form')[0].reset();
+<% else %>
+  $('.engage_form form').prepend("<div class='alert alert-warning alert-dismissable' role='alert'><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button><h4>에러가 발생했습니다.</h4><ul><% @engage.errors.full_messages.each do | error | %><li><%= error %></li><% end %></ul></div>");
+  $('.alert.alert-warning').delay(3000).slideUp('fast');
+<% end %>
+
+// $(function() {
+//   $(".comment_text").on("keypress", function(e) {
+//     var frm;
+//     if (e.keyCode === 13 && !e.shiftKey) {
+//       e.preventDefault();
+//       frm = this.form;
+//       $.ajax({
+//         url: $(frm).attr("action"),
+//         data: $(frm).serialize(),
+//         type: "POST",
+//         dataType: "script"
+//       });
+//     }
+//   });
+// });

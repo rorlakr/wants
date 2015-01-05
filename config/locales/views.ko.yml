@@ -54,3 +54,6 @@ ko:
         back: 목록
         edit: 수정
         destroy: 삭제
+    comments:
+      title: 댓글목록
+

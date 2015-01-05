@@ -4,8 +4,14 @@
 
 .engages {
   margin-bottom: 1em;
+  ol {
+    padding-left: 2.5em;
+  }
 }
 
+.engage_form {
+  padding-left: 2.5em;
+}
 .engaged {
   background-color: #F6F6F6;
   border: 1px solid #eaeaea;

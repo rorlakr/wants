@@ -1,2 +1,7 @@
-$("#comments_<%= @commentable.class.name.downcase %>_<%= @commentable.id %>").append("<%=j render('comments/comment', comment:@comment) %>");
-$("#comment_form_<%= @commentable.class.name.downcase %>_<%= @commentable.id %> form")[0].reset();
+<% if @comment.errors.size.zero? %>
+  $("#comments_<%= @commentable.class.name.downcase %>_<%= @commentable.id %>").append("<%=j render('comments/comment', comment:@comment) %>");
+  $("#comment_form_<%= @commentable.class.name.downcase %>_<%= @commentable.id %> form")[0].reset();
+<% else %>
+  $('#comment_form_<%= @commentable.class.name.downcase %>_<%= @commentable.id %> form').prepend("<div class='alert alert-warning alert-dismissible' role='alert'><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button><h4>에러가 발생했습니다.</h4><ul><% @comment.errors.full_messages.each do | error | %><li><%= error %></li><% end %></ul></div>");
+  $('.alert.alert-warning').delay(3000).slideUp('fast');
+<% end %>

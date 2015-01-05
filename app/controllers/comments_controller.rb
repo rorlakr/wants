@@ -7,6 +7,7 @@ class CommentsController < ApplicationController
     @comment.save
     respond_to do | format |
       format.js
+      format.html
     end
   end
 

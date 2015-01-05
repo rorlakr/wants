@@ -1,8 +1,8 @@
-<li id="comment_<%= comment.id %>">
+<li id="comment_<%= comment.id %>" class="comment">
   <%= comment.content %>
   <div class="status">
     <%= comment.user.email %> |
     <%= time_ago_in_words comment.created_at %>전 |
-    <%= link_to icon('remove', '삭제'), [comment.commentable, comment], remote: true, method: :delete, date: { confirm: 'Are you sure?'} %>
+    <%= link_to icon('remove', '삭제'), [comment.commentable, comment], remote: true, method: :delete, data: { confirm: 'Are you sure?'} %>
   </div>
 </li>
