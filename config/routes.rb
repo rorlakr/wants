@@ -1,9 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'comments/create'
-
-  get 'comments/destroy'
-
   devise_for :users
 
   resources :users do
@@ -24,6 +20,7 @@ Rails.application.routes.draw do
   resources :engages, concerns: :commentable
 
   get 'pages/welcome' => 'high_voltage/pages#show', id: 'welcome'
+  get 'pages/help' => 'high_voltage/pages#show', id: 'help'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
