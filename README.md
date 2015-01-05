@@ -75,9 +75,15 @@
 * title
 * content
 
-### 3. 구인/구직교섭(Engage)
+### 3. 구인/구직교섭(Engage) - polymorphic belongs to engagealble
 
 등록한 항목
 
 * 교섭자의 프로필 공유여부 shared_profile
 * 글내용 content
+
+### 4. 코멘트 (Comment) - polymorphic belongs to commentable
+
+등록할 항목
+
+* 글내용 (Content)
