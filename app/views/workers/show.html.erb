@@ -1,7 +1,7 @@
 <h1><%= @worker.title %></h1>
-<p>: <%= @worker.content %> <%= published_icon(@worker.user.profile.published) %></p>
+<p>: <%= @worker.content %> <%= published_icon(@worker.user.profile.published) if @worker.user.profile.present? %></p>
 
-<%= render 'profiles/profile', profile: @worker.user.profile if @worker.user.profile.published %>
+<%= render 'profiles/profile', profile: @worker.user.profile if @worker.user.try(:profile).try(:published) %>
 
 <div class="form-actions">
   <% if current_user.can_update? @worker %>
@@ -11,7 +11,7 @@
 </div>
 
 <div class='engages'>
-  <h3>인터뷰요청 상황</h3>
+  <h3>인터뷰요청 상황 <small><%= @worker.engages.size %></small></h3>
   <ol id='worker_<%= @worker.id %>'>
     <%= render @worker.engages %>
   </ul>
@@ -22,7 +22,7 @@
 </div>
 
 <div class="comments_for_worker">
-  <h3><%= t('views.comments.title') %> :</h3>
+  <h3><%= t('views.comments.title') %> <small><%= @worker.comments.size %></small></h3>
   <ul id='comments_worker_<%= @worker.id %>'>
     <%= render @worker.comments %>
   </ul>

@@ -55,7 +55,7 @@
 </div>
 
 <div class='engages'>
-  <h3>지원현황</h3>
+  <h3>지원현황 <small><%= @job.engages.size %></small></h3>
   <ol id='job_<%= @job.id %>' >
     <%= render @job.engages %>
   </ul>
@@ -66,7 +66,7 @@
 </div>
 
 <div class="comments_for_job">
-  <h3><%= t('views.comments.title')%> :</h3>
+  <h3><%= t('views.comments.title')%> <small><%= @job.comments.size %></small></h3>
   <ul id='comments_job_<%= @job.id %>'>
     <%= render @job.comments %>
   </ul>

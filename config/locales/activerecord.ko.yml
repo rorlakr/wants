@@ -5,6 +5,7 @@ ko:
         email: 이메일
         password: 비밀번호
         password_confirmation: 비밀번호 재입력
+        current_password: 현재비밀번호
         remember_me: 로그인상태 기억하기
       job:
         title: 글제목
@@ -21,7 +22,8 @@ ko:
         title: 글제목
         content: 글내용
       profile:
-        alias_name: 유저명
+        real_name: 사용자실명
+        alias_name: 로그인명
         phone: 전화번호
         homepage: 홈페이지주소
         twitter: 트위터계정

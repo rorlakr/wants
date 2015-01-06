@@ -4,7 +4,7 @@ class Profile < ActiveRecord::Base
   include Authority::Abilities
   belongs_to :user
 
-  validates :alias_name, :phone, presence: true
+  validates :real_name, :alias_name, :phone, presence: true
   validates :alias_name, uniqueness: true
 
 end

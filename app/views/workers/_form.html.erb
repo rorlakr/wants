@@ -7,6 +7,8 @@
       : <span id='view_profile'>
         <% if @worker.user.profile.present? %>
           <%= render 'profiles/view_profile', profile: @worker.user.profile %>
+        <% else %>
+          <%= render 'profiles/view_profile', profile: @worker.user.build_profile %>
         <% end %>
         </span>
     </div>

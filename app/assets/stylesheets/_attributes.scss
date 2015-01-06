@@ -1,2 +1,16 @@
-$font-family-serif : 'NanumGothic-Regular', serif;
-$font-family-sans-serif : 'NanumGothic-Regular', serif;
+// Typography for Bootstrap
+$font-family-serif : 'Nanum Myeongjo', serif;
+$font-family-sans-serif : 'Nanum Gothic', sans-serif;
+$font-family-base: $font-family-serif;
+$headings-font-weight : 800;
+$font-size-base: 13px;
+$font-size-h1: floor(($font-size-base * 2.8));
+
+
+// http://deminoth.github.io/google-font-kor/
+// http://www.google.com/fonts/earlyaccess
+// font-family: 'Jeju Gothic', serif;
+// font-family: 'Jeju Hallasan', serif;
+// font-family: 'Hanna', serif;
+// font-family: 'Nanum Gothic', serif;
+// font-family: 'Nanum Myeongjo', serif;

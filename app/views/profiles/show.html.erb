@@ -1,7 +1,7 @@
-<h1><%= @profile.alias_name %></h1>
+<h1><%= @profile.real_name %>(<%= @profile.alias_name %>)</h1>
 <p>: <%= @profile.homepage %></p>
 
-<%= render 'profiles/profile' %>
+<%= render 'profiles/profile', profile: @profile %>
 
 <div class="form-actions">
   <%= link_to t('views.workers.show.edit'), edit_user_profile_path(current_user), class: 'btn btn-default' %>

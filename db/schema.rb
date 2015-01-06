@@ -67,6 +67,7 @@ ActiveRecord::Schema.define(version: 20150105035859) do
 
   create_table "profiles", force: :cascade do |t|
     t.integer  "user_id"
+    t.string   "real_name",                                    null: false
     t.string   "alias_name",                                   null: false
     t.string   "homepage"
     t.string   "phone",                                        null: false

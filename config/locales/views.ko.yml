@@ -5,6 +5,12 @@ ko:
       edit: 수정
       destroy: 삭제
     devise:
+      registrations:
+        edit_user: 계정정보 수정
+        cancel_my_account: 계정 삭제
+        cancel_my_account_info: 계정 삭제후 취소할 수 없습니다. 그동안 본 서비스를 사용해 주셔서 감사했습니다.
+        do_cancel: 삭제실행
+        back: '> 뒤로'
       sessions:
         execute: 실행
         login: 로그인
@@ -53,6 +59,8 @@ ko:
         back: 목록
         show: 보기
     profile:
+      edit:
+        edit_profile: 프로필 수정
       show:
         prev: 뒤로
         back: 목록

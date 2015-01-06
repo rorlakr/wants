@@ -2,6 +2,10 @@
 
 ko:
   devise:
+    form:
+      hint:
+        leave_it_blank: "(변경하지 않을 경우 공백으로 두십시요.)"
+        need_current_password: "(변경된 내용을 저장하기 위해서는 현재 사용 중인 비밀번호를 입력하십시요.)"
     confirmations:
       confirmed: '성공적으로 이메일 주소를 확인하였습니다. 이제 로그인된 상태입니다.'
       send_instructions: '이메일 주소를 확인하는 메일을 발송하였습니다. 잠시후에 메일을 확인해보세요.'
