@@ -56,6 +56,8 @@ gem 'bootstrap-datepicker-rails'
 gem 'jquery-turbolinks'
 gem 'rolify'
 gem 'authority'
+gem "mini_magick"
+gem "refile", require: ["refile/rails", "refile/image_processing"]
 
 group :development, :test do
   gem "rspec-rails", "~> 3.1.0"

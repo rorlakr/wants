@@ -64,6 +64,6 @@ class ProfilesController < ApplicationController
   private
 
   def profile_params
-    params.require(:profile).permit( :real_name, :alias_name, :phone, :homepage, :twitter, :facebook, :linkedin, :salary_requirement, :job_status, :job_status_etc, :dev_languages, :dev_duration, :dev_web, :dev_system, :dev_smart, :dev_history, :community_activity, :book_author, :book_trans, :published)
+    params.require(:profile).permit( :profile_image, :profile_image_cache_id, :remove_profile_image, :remote_profile_image_url, :real_name, :alias_name, :phone, :homepage, :twitter, :facebook, :linkedin, :salary_requirement, :job_status, :job_status_etc, :dev_languages, :dev_duration, :dev_web, :dev_system, :dev_smart, :dev_history, :community_activity, :book_author, :book_trans, :published)
   end
 end

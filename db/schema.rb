@@ -11,17 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150105035859) do
-
-  create_table "applies", force: :cascade do |t|
-    t.integer  "user_id"
-    t.boolean  "shared_profile", default: false
-    t.text     "content"
-    t.datetime "created_at",                     null: false
-    t.datetime "updated_at",                     null: false
-  end
-
-  add_index "applies", ["user_id"], name: "index_applies_on_user_id"
+ActiveRecord::Schema.define(version: 20150106010430) do
 
   create_table "comments", force: :cascade do |t|
     t.integer  "commentable_id"
@@ -88,6 +78,7 @@ ActiveRecord::Schema.define(version: 20150105035859) do
     t.boolean  "published",                    default: false
     t.datetime "created_at",                                   null: false
     t.datetime "updated_at",                                   null: false
+    t.string   "profile_image_id"
   end
 
   add_index "profiles", ["alias_name"], name: "index_profiles_on_alias_name", unique: true

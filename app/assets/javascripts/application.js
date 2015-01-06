@@ -16,5 +16,6 @@
 //= require bootstrap-sprockets
 //= require bootstrap-datepicker/core
 //= require bootstrap-datepicker/locales/bootstrap-datepicker.kr.js
+//= require refile
 //= require_tree .
 //= require turbolinks

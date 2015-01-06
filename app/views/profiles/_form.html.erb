@@ -2,8 +2,23 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :real_name %>
-    <%= f.input :alias_name %>
+    <%= f.label "프로필이미지" %>
+    <div style='border:1px solid #eaeaea;background-color:#F6F6F6;border-radius:5px;padding:1em 1em 0 1em;margin-bottom:1em;'>
+      <% if @profile.profile_image.present? %>
+        <%= image_tag attachment_url(@profile, :profile_image, :fill, 100, 100), style:'margin-bottom: .5em;border-radius:5px;' %>
+        <div style='margin-bottom: 1em;'>
+          <%= f.input :remove_profile_image, as: :boolean, label: '이미지 제거'  %>
+        </div>
+      <% end %>
+      <div class='form-group'>
+        <%= f.attachment_field :profile_image %>
+      </div>
+      <%= f.input :remote_profile_image_url, label: '또는 이미지 URL', placeholder: 'http://' %>
+    </div>
+    <div class="row">
+      <div class="col-md-6"><%= f.input :real_name %></div>
+      <div class="col-md-6"><%= f.input :alias_name %></div>
+    </div>
     <%= f.input :phone %>
     <%= f.input :homepage, placeholder: 'http://' %>
     <div class="row">

@@ -22,6 +22,7 @@ ko:
         title: 글제목
         content: 글내용
       profile:
+        profile_image: 프로필이미지
         real_name: 사용자실명
         alias_name: 로그인명
         phone: 전화번호

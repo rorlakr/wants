@@ -28,8 +28,8 @@ ko:
         resend_confirmation: 확인 안내문 이메일 재발송
         resend_confirm: 확인 안내문 재발송
     pages:
-      jobs_label_html: "구인<br />(%{jobs_count})"
-      workers_label_html: "구직<br />(%{workers_count})"
+      jobs_label_html: "일꺼리<br />(%{jobs_count})"
+      workers_label_html: "일할사람<br />(%{workers_count})"
     jobs:
       index:
         listing_jobs: 일꺼리
@@ -59,6 +59,8 @@ ko:
         back: 목록
         show: 보기
     profile:
+      new:
+        new_profile: 프로필 생성
       edit:
         edit_profile: 프로필 수정
       show:

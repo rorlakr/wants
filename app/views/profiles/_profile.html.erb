@@ -1,5 +1,10 @@
 <div class="panel panel-default">
+
   <table class='table table-bordered table-hover table-th-vertical'>
+    <tr>
+      <th><%= t('activerecord.attributes.profile.profile_image') %></th>
+      <td><%= profile.profile_image ? image_tag(attachment_url(profile, :profile_image, :fill, 100, 100), style:'border-radius:4px;') : "없음" %></td>
+    </tr>
     <tr>
       <th><%= t('activerecord.attributes.profile.user') %></th>
       <td><%= profile.user.email %></td>
