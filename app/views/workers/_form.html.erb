@@ -25,15 +25,16 @@
   </div>
 <% end %>
 
+
 <div class="modal fade" id='myModal'>
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title">프로파일</h4>
+        <h2 class="modal-title" style="margin-bottom:0 !important;">나의 프로필</h2>
       </div>
       <div id="view_profile_form" class="modal-body">
-        <%= render partial: 'profiles/form' %>
+        <%= render 'profiles/form' %>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

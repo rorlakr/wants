@@ -15,11 +15,12 @@ class WorkersController < ApplicationController
 
   def new
     @worker = Worker.new
+    @worker.user = current_user
     @remote = true
-    if current_user.profile
-      @profile = current_user.profile
+    if @worker.user.profile
+      @profile = @worker.user.profile
     else
-      @profile = current_user.build_profile
+      @profile = @worker.user.build_profile
     end
     respond_with(@worker)
   end
@@ -27,11 +28,12 @@ class WorkersController < ApplicationController
   def edit
     authorize_action_for @worker
     @remote = true
-    if current_user.profile
-      @profile = current_user.profile
+    if @worker.user.profile
+      @profile = @worker.user.profile
     else
       @profile = current_user.build_profile
     end
+    respond_with(@worker)
   end
 
   def create

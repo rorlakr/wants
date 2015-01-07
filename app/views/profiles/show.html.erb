@@ -1,5 +1,5 @@
 <h1><%= @profile.real_name %>(<%= @profile.alias_name %>)</h1>
-<p>: <%= @profile.homepage %></p>
+<p>: <%= @profile.homepage.blank? ? "홈페이지를 등록해 주세요" : @profile.homepage %></p>
 
 <%= render 'profiles/profile', profile: @profile %>
 

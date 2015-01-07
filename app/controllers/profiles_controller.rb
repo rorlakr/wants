@@ -3,23 +3,23 @@ class ProfilesController < ApplicationController
   layout 'profiles'
 
   def new
-    @profile = current_user.build_profile
+    @profile = User.find(params[:user_id]).build_profile
     @remote = false
   end
 
   def edit
-    @profile = current_user.profile
+    @profile = User.find(params[:user_id]).profile
     @remote = false
 
   end
 
   def show
-    @profile = current_user.profile
+    @profile = User.find(params[:user_id]).profile
 
   end
 
   def create
-    @profile = current_user.build_profile(profile_params)
+    @profile = User.find(params[:user_id]).build_profile(profile_params)
     if @profile.save
       if request.xhr?
         respond_to do | format |
@@ -34,7 +34,8 @@ class ProfilesController < ApplicationController
   end
 
   def update
-    @profile = current_user.profile
+    @profile = User.find(params[:user_id]).profile
+
     if @profile.update(profile_params)
       if request.xhr?
         respond_to do | format |
@@ -49,7 +50,7 @@ class ProfilesController < ApplicationController
   end
 
   def destroy
-    @profile = current_user.profile
+    @profile = User.find(params[:user_id]).profile
     @profile.destroy
     @profile = current_user.build_profile
     if request.xhr?
@@ -66,4 +67,5 @@ class ProfilesController < ApplicationController
   def profile_params
     params.require(:profile).permit( :profile_image, :profile_image_cache_id, :remove_profile_image, :remote_profile_image_url, :real_name, :alias_name, :phone, :homepage, :twitter, :facebook, :linkedin, :salary_requirement, :job_status, :job_status_etc, :dev_languages, :dev_duration, :dev_web, :dev_system, :dev_smart, :dev_history, :community_activity, :book_author, :book_trans, :published)
   end
+
 end

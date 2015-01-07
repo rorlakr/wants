@@ -112,3 +112,10 @@
 * 개인프로필용 이미지 업로드(profile_image)
 * 작성 중...
 
+## ActiveJob with Delayed_Job
+http://www.youtube.com/watch?v=gar02UTpy98
+
+
+## Submit with XHR
+http://stackoverflow.com/a/21607136
+  

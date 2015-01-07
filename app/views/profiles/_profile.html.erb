@@ -2,7 +2,7 @@
 
   <table class='table table-bordered table-hover table-th-vertical'>
     <tr>
-      <th><%= t('activerecord.attributes.profile.profile_image') %></th>
+      <th class='col-md-4'><%= t('activerecord.attributes.profile.profile_image') %></th>
       <td><%= profile.profile_image ? image_tag(attachment_url(profile, :profile_image, :fill, 100, 100), style:'border-radius:4px;') : "없음" %></td>
     </tr>
     <tr>
@@ -39,13 +39,13 @@
     <% if profile.dev_system %>
     <tr>
       <th><%= t('activerecord.attributes.profile.dev_system') %></th>
-      <td><%= profile.dev_system %></td>
+      <td><%= boolean_icon profile.dev_system %></td>
     </tr>
     <% end %>
     <% if profile.dev_smart %>
     <tr>
       <th><%= t('activerecord.attributes.profile.dev_smart') %></th>
-      <td><%= profile.dev_smart %></td>
+      <td><%= boolean_icon profile.dev_smart %></td>
     </tr>
     <% end %>
     <% if !profile.dev_history.blank? %>
