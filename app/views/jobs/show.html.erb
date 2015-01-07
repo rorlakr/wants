@@ -21,7 +21,7 @@
     <% if @job.always %>
     <tr>
       <th><%= t('activerecord.attributes.job.always') %></th>
-      <td><%= @job.always %></td>
+      <td><%= boolean_icon @job.always %></td>
     </tr>
     <% else %>
     <tr>

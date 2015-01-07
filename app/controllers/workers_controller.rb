@@ -37,7 +37,7 @@ class WorkersController < ApplicationController
   end
 
   def create
-    authorize_action_for @worker
+    authorize_action_for Worker
     @worker = Worker.new(worker_params)
     @worker.user = current_user
     @worker.save

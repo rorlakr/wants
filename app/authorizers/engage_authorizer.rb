@@ -13,6 +13,6 @@ class EngageAuthorizer < ApplicationAuthorizer
   end
 
   def deletable_by?(user)
-    resource.user == user || user.has_role?(:admin)
+    (resource.user == user && resource.comments.size == 0) || user.has_role?(:admin)
   end
 end

@@ -25,11 +25,11 @@ module ApplicationHelper
   end
 
   def boolean_icon( bool )
-    bool ? icon('check') : icon('remove')
+    bool ? fa_icon('check') : fa_icon('remove')
   end
 
   def published_icon( bool )
-    bool ? icon('unlock', '프로필정보') : icon('lock', '프로필정보')
+    bool ? fa_icon('unlock', text:'프로필정보') : fa_icon('lock', text:'프로필정보')
   end
 
 end

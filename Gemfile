@@ -48,7 +48,8 @@ gem 'bootstrap-sass', '~> 3.3.1'
 gem 'autoprefixer-rails'
 gem 'simple_form'
 gem 'devise'
-gem 'font-awesome-sass', '~> 4.2.0'
+# gem 'font-awesome-sass', '~> 4.2.0'
+gem "font-awesome-rails"
 gem 'country_select'
 gem "letter_opener", :group => :development
 gem 'rails-i18n', '~> 4.0.0' # For 4.0.x

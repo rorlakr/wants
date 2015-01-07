@@ -55,6 +55,7 @@ ko:
       show:
         back: 목록
         edit: 수정
+        destroy: 삭제
       form:
         back: 목록
         show: 보기

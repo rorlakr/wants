@@ -110,6 +110,8 @@
 * 댓글 (Comment) - 모든 글에 댓글을 달 수 있도록 한다. 
 * 개인프로필 작성(Profile)
 * 개인프로필용 이미지 업로드(profile_image)
+* Engage 객체가 하나라도 있으면 Job / Worker 객체를 삭제할 수 없다.
+* Comment 객체가 하나라도 있으면 Engage 객체를 삭제할 수 없다. 
 * 작성 중...
 
 ## ActiveJob with Delayed_Job

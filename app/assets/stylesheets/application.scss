@@ -1,16 +1,3 @@
-// @font-face {
-//   font-family: 'NanumGothic-Regular';
-//   src: url(font-path('NanumGothic-Regular.ttf')) format('truetype'), url(font-path('NanumGothic-Regular.eot')) format('eot');
-// }
-// @font-face {
-//   font-family: 'NanumGothic-Bold';
-//   src: url(font-path('NanumGothic-Bold.ttf')) format('truetype'), url(font-path('NanumGothic-Bold.eot')) format('eot');
-// }
-// @font-face {
-//   font-family: 'NanumGothic-ExtraBold';
-//   src: url(font-path('NanumGothic-ExtraBold.ttf')) format('truetype'), url(font-path('NanumGothic-ExtraBold.eot')) format('eot');
-// }
-
 @import url(http://fonts.googleapis.com/earlyaccess/jejugothic.css);
 @import url(http://fonts.googleapis.com/earlyaccess/jejuhallasan.css);
 @import url(http://fonts.googleapis.com/earlyaccess/hanna.css);
@@ -19,7 +6,6 @@
 @import "colors";
 @import "attributes";
 @import "customized-bootstrap";
-@import "font-awesome-sprockets";
 @import "font-awesome";
 @import "bootstrap-sprockets";
 @import "bootstrap";

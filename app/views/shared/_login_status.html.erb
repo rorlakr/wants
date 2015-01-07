@@ -1,6 +1,6 @@
 <div class='login-status'>
   <% if user_signed_in? %>
-    <% if current_user.try(:profile).try(:profile_image?) %>
+    <% if current_user.profile.present? && current_user.profile.profile_image_id? %>
       <%= image_tag attachment_url(current_user.profile, :profile_image, :fill, 50, 50), class:'profile_image', size:'19x19' %>
     <% end %>
     <%= link_to "#{current_user.email}(#{current_user.roles.map(&:name).join(', ')})", edit_user_registration_path %> |

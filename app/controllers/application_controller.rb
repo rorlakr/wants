@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
   # Send 'em back where they came from with a slap on the wrist
   def authority_forbidden(error)
     Authority.logger.warn(error.message)
-    redirect_to request.referrer.presence || root_path, :alert => "죄송합니다. 귀하는 접근 권한이 없습니다. 필요한 경우 권한을 부여 받으시기 바랍니다. <a href='mailto:rorlab@gmail.com'>관리자</a>"
+    redirect_to request.referrer.presence || root_path, :alert => "#{view_context.fa_icon('exclamation-triangle')}[권한제한] 죄송합니다. 작업을 수행할 수 없습니다.<br />이와 관련된 질문 사항은 <a href='mailto:rorlab@gmail.com'>관리자</a>에게 이메일로 해 주시기 바랍니다."
   end
 
   protected
