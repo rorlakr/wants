@@ -8,9 +8,8 @@
 대상글
 -----------------------------------------
 
-제목 : <%= @comment.commentable.title %>
-
-내용 : <%= @comment.commentable.content %>
+<%= link_to @commentable.class.name, @commentable %>
+<hr>
 
 -----------------------------------------
 댓글내용

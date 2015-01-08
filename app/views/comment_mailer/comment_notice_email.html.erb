@@ -5,8 +5,7 @@
 
 <hr>
 <h4>대상글</h4>
-<p>제목 : <%= @comment.commentable.title %></p>
-<p>내용 : <%= simple_format @comment.commentable.content %></p>
+<%= link_to @commentable.class.name, @commentable %>
 <hr>
 <h4>댓글</h4>
 <p><%= simple_format @comment.content %></p>
