@@ -60,6 +60,7 @@ gem 'authority'
 gem "mini_magick"
 gem "refile", require: ["refile/rails", "refile/image_processing"]
 gem 'delayed_job_active_record'
+gem "delayed_job_web"
 gem 'daemons'
 gem 'remotipart', '~> 1.2'
 

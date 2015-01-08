@@ -112,6 +112,8 @@
 * 개인프로필용 이미지 업로드(profile_image)
 * Engage 객체가 하나라도 있으면 Job / Worker 객체를 삭제할 수 없다.
 * Comment 객체가 하나라도 있으면 Engage 객체를 삭제할 수 없다. 
+* /delayed_job 으로 접근하면 delayed_job 대시보드에 접근할 수 있다. 
+* 자신이 작성한 글에 대한 알림 이메일을 발송한다. 
 * 작성 중...
 
 ## ActiveJob with Delayed_Job

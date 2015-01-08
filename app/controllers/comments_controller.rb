@@ -4,7 +4,7 @@ class CommentsController < ApplicationController
     @commentable = params.keys.last.split('_')[0].capitalize.constantize.find params.values.last.to_i
     @comment = @commentable.comments.new(comment_params)
     @comment.user = current_user
-    @comment.save
+    CommentJob.perform_later(current_user, @comment ) if @comment.save
     respond_to do | format |
       format.js
       format.html

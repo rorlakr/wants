@@ -20,11 +20,13 @@
       <td><%= profile.job_status_etc %></td>
     </tr>
     <% end %>
+    <% if profile.dev_languages.present? %>
     <tr>
       <th><%= t('activerecord.attributes.profile.dev_languages') %></th>
       <td><%= profile.dev_languages %></td>
     </tr>
-    <% if profile.dev_duration %>
+    <% end %>
+    <% if profile.dev_duration.present? %>
     <tr>
       <th><%= t('activerecord.attributes.profile.dev_duration') %></th>
       <td><%= profile.dev_duration %></td>
