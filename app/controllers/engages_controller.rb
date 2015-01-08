@@ -6,8 +6,7 @@ class EngagesController < ApplicationController
     @engage = @engageable.engages.new(engage_params)
     authorize_action_for @engage, for: @engageable
     @engage.user = current_user
-    EngageJob.perform_later([current_user, @engageable.user], @engage ) if @engage.save
-
+    @engage.send_notification!([current_user, @engageable.user]) if @engage.save
     respond_to do | format |
       format.js
     end
