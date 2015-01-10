@@ -129,29 +129,49 @@
 
   > 개발 환경에서 sqlite3를 사용하는 경우라면 gem 'sqlite3', group: :development 로 그룹옵션을 지정해 준다.
 
-2. 허로쿠를 웹사이트를 방문하여 app를 하나 생성하고 해당 app의 저장소 주소를 git remote add 명령을 사용하여 heroku라는 이름으로 추가한다. 현재 master 브랜치를 허로쿠로 푸쉬한다.
+2. 허로쿠를 웹사이트를 방문하여 앱을 하나 생성하고, 또는 커맨드라인에서 아래와 같이 허로쿠 로그인 후 (https://toolbelt.heroku.com/)
 
+  ```shell
+  $ heroku login
+  Enter your Heroku credentials.
+  Email: adam@example.com
+  Password (typing will be hidden):
+  Authentication successful.
   ```
+
+  앱을 생성할 수도 있다.
+
+  ```shell
+  $ cd ~/myapp
+  $ heroku create
+  Creating stark-fog-398... done, stack is cedar-14
+  http://stark-fog-398.herokuapp.com/ | https://git.heroku.com/stark-fog-398.git
+  Git remote heroku added
+  ```
+
+4. 해당 앱의 저장소 주소를 `git remote add` 명령을 사용하여 `heroku`라는 이름으로 추가한다. 그리고, 현재 `master` 브랜치를 허로쿠로 푸시한다.
+
+  ```shell
   $ git remote add heroku git@heroku.com:wants.git
   $ git push heroku master
   ```
 
-3. 배포 후에 데이터베이스 마이그레이션을 한다.
+5. 배포 후에 데이터베이스 마이그레이션을 한다.
 
-  ```
+  ```shell
   $ heroku run rake db:migrate
   ```
 
-4. 그리고 메일 발송을 위한 SMTP 환경설정을 허로쿠에 해 준다. 여기서는 mandrillapp.com 서비스를 이용할 것이라서 아래와 같이 환경변수를 지정해 준다. 직접 웹사이트로 접속하여 계정을 생성한 후 해당 정보를 알 수 있다.
+6. 그리고 메일 발송을 위한 SMTP 환경변수를 허로쿠에 설정해 준다. 여기서는 http://mandrillapp.com 서비스를 이용할 것이라서 아래와 같이 환경변수를 지정해 준다. 직접 웹사이트로 접속하여 계정을 생성한 후 해당 정보를 알 수 있다.
 
-  ```
+  ```shell
   $ heroku config:set SMTP_ADDRESS='smtp.mandrillapp.com'
   $ heroku config:set SMTP_PORT='587'
   $ heroku config:set SMTP_USERNAME='<user_account>'
   $ heroku config:set SMTP_PASSWORD='<user_password>'
   ```
 
-5. prodictuction.rb 파일에서 아래와 같이 추가한다.
+7. prodictuction.rb 파일에서 아래와 같이 추가한다.
 
   ```
   config.action_mailer.default_url_options = { host: 'wants.herokuapp.com'}
@@ -166,9 +186,11 @@
   }
   ```
 
-5. 이제 브라우저에서 http://wants.herokuapp.com으로 접속해 본다.
+8. 변경된 소스코드를 저장하고`` git push origin master` 한다. 그리고 허로쿠로도 `git push heroku master` 명령을 실행한다.
 
-6. 추가로, 허로쿠에서 앱 페이지 `</> Code` 페이지로 이동하여 `automatic deploys`를 설정하면 향후에는 허로쿠 Git로 푸시하지 않고 바로 Github에만 푸시하면 자동으로 배포가 완료되어 훨씬 수월하게 관리할 수 있게 된다. 
+9. 이제 브라우저에서 http://wants.herokuapp.com으로 접속해 본다.
+
+10. 추가로, 허로쿠에서 앱 페이지 `</> Code` 페이지로 이동하여 `automatic deploys`를 설정하면 향후에는 허로쿠 Git로 푸시하지 않고 바로 Github에만 푸시하면 자동으로 배포가 완료되어 훨씬 수월하게 관리할 수 있게 된다.
 
 ## ActiveJob with Delayed_Job
 http://www.youtube.com/watch?v=gar02UTpy98
