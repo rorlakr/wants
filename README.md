@@ -192,6 +192,38 @@
 
 10. 추가로, 허로쿠에서 앱 페이지 `</> Code` 페이지로 이동하여 `automatic deploys`를 설정하면 향후에는 허로쿠 Git로 푸시하지 않고 바로 Github에만 푸시하면 자동으로 배포가 완료되어 훨씬 수월하게 관리할 수 있게 된다.
 
+## File Storage S3 사용하기
+
+1. Gemfile에 아래의 젬을 추가하고 `bundle install`한다.
+
+  ```ruby
+  gem 'aws-sdk'
+  ```
+
+2. config/initializers/refile.rb 파일을 생성하고 아래와 같이 옵션을 추가한다.
+
+```ruby
+require "refile/backend/s3"
+
+aws = {
+  access_key_id: ENV('AWS_ACCESS_KEY_ID'),
+  secret_access_key: ENV('AWS_SECRET_ACCESS_KEY'),
+  bucket: ENV('AWS_BUCKET'),
+}
+Refile.cache = Refile::Backend::S3.new(prefix: "cache", **aws)
+Refile.store = Refile::Backend::S3.new(prefix: "store", **aws)
+```
+
+3. 그리고 허로쿠에 환경변수를 추가해 준다.
+
+```shell
+$ heroku config:set AWS_BUCKET=<bucket_name>
+$ heroku config:set AWS_ACCESS_KEY_ID=<aws_access_key_id>
+$ heroku config:set AWS_SECRET_ACCESS_KEY=<aws_secret_access_key>
+```
+
+4. 작업한 코드를 저장하고 `git push`한다. 끝
+
 ## ActiveJob with Delayed_Job
 http://www.youtube.com/watch?v=gar02UTpy98
 
