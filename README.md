@@ -202,25 +202,27 @@
 
 2. config/initializers/refile.rb 파일을 생성하고 아래와 같이 옵션을 추가한다.
 
-```ruby
-require "refile/backend/s3"
+  ```ruby
+  require "refile/backend/s3"
 
-aws = {
-  access_key_id: ENV('AWS_ACCESS_KEY_ID'),
-  secret_access_key: ENV('AWS_SECRET_ACCESS_KEY'),
-  bucket: ENV('AWS_BUCKET'),
-}
-Refile.cache = Refile::Backend::S3.new(prefix: "cache", **aws)
-Refile.store = Refile::Backend::S3.new(prefix: "store", **aws)
-```
+  aws = {
+    access_key_id: ENV['AWS_ACCESS_KEY_ID'],
+    secret_access_key: ENV['AWS_SECRET_ACCESS_KEY'],
+    bucket: ENV['AWS_BUCKET'],
+  }
+  Refile.cache = Refile::Backend::S3.new(prefix: "cache", **aws)
+  Refile.store = Refile::Backend::S3.new(prefix: "store", **aws)
+  ```
+
+  > 참고: AWS(아마존 웹서비스) S3 bucket을 생성하는 방법은 [여기](https://devcenter.heroku.com/articles/s3)를 참고한다.
 
 3. 그리고 허로쿠에 환경변수를 추가해 준다.
 
-```shell
-$ heroku config:set AWS_BUCKET=<bucket_name>
-$ heroku config:set AWS_ACCESS_KEY_ID=<aws_access_key_id>
-$ heroku config:set AWS_SECRET_ACCESS_KEY=<aws_secret_access_key>
-```
+  ```shell
+  $ heroku config:set AWS_BUCKET=<bucket_name>
+  $ heroku config:set AWS_ACCESS_KEY_ID=<aws_access_key_id>
+  $ heroku config:set AWS_SECRET_ACCESS_KEY=<aws_secret_access_key>
+  ```
 
 4. 작업한 코드를 저장하고 `git push`한다. 끝
 
