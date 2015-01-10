@@ -50,7 +50,6 @@ gem 'autoprefixer-rails'
 gem 'simple_form'
 gem 'devise'
 gem 'devise-async'
-# gem 'font-awesome-sass', '~> 4.2.0'
 gem "font-awesome-rails"
 gem 'country_select'
 gem "letter_opener", :group => :development
@@ -61,14 +60,10 @@ gem 'rolify'
 gem 'authority'
 gem "mini_magick"
 gem "refile", require: ["refile/rails", "refile/image_processing"]
-# gem 'delayed_job_active_record'
-# gem "delayed_job_web"
-# gem 'daemons'
-gem 'sucker_punch'
+gem 'delayed_job_active_record'
+gem "delayed_job_web"
+gem 'daemons'
 gem 'remotipart', '~> 1.2'
-gem 'pg', group: :production
-gem 'rails_12factor', group: :production
-gem "aws-sdk"
 
 group :development, :test do
   gem "rspec-rails", "~> 3.1.0"

@@ -22,7 +22,7 @@ Rails.application.routes.draw do
   get 'pages/welcome' => 'high_voltage/pages#show', id: 'welcome'
   get 'pages/help' => 'high_voltage/pages#show', id: 'help'
 
-  # match "/delayed_job" => DelayedJobWeb, :anchor => false, via: [:get, :post]
+  match "/delayed_job" => DelayedJobWeb, :anchor => false, via: [:get, :post]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
