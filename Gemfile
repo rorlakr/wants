@@ -67,6 +67,7 @@ gem 'daemons'
 gem 'remotipart', '~> 1.2'
 gem 'pg', group: :production
 gem 'rails_12factor', group: :production
+gem "aws-sdk"
 
 group :development, :test do
   gem "rspec-rails", "~> 3.1.0"

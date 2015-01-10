@@ -43,6 +43,11 @@ GEM
       rake (>= 0.8.7)
     autoprefixer-rails (4.0.2.2)
       execjs
+    aws-sdk (1.60.2)
+      aws-sdk-v1 (= 1.60.2)
+    aws-sdk-v1 (1.60.2)
+      json (~> 1.4)
+      nokogiri (>= 1.4.4)
     bcrypt (3.1.9)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
@@ -312,6 +317,7 @@ PLATFORMS
 DEPENDENCIES
   authority
   autoprefixer-rails
+  aws-sdk
   bcrypt (~> 3.1.7)
   bootstrap-datepicker-rails
   bootstrap-sass (~> 3.3.1)
