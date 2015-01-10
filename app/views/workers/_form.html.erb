@@ -2,7 +2,7 @@
   <%= f.error_notification %>
 
   <div class='alert alert-warning'>
-    <%= icon('info-circle', '구직신청서를 작성하시면 상대방에게 개인 프로파일정보가 공개됩니다.') %>
+    <%= fa_icon('info-circle', text:'구직신청서를 작성하시면 상대방에게 개인 프로파일정보가 공개됩니다.') %>
     <div style='padding-left:1em;margin-top:.5em;'>
       : <span id='view_profile'>
         <% if @worker.user.profile.present? %>
