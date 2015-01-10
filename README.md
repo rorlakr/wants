@@ -95,10 +95,10 @@
 
 ## 권한설정
 
-* 회원가입 후 이메일 인증을 통해서 등록이 완료된다. 
-* 본인이 작성한 구직신청 및 인터뷰요청 글은 자신과 원본글의 작성자만 볼 수 있다. 
-* 개인 프로필정보는 공개/비공개 옵션으로 변경할 수 있다. 
-* 본인 작성 일꺼리 및 일할사람 글에 대해서는 구직신청 및 인터뷰요청을 할 수 없다. 
+* 회원가입 후 이메일 인증을 통해서 등록이 완료된다.
+* 본인이 작성한 구직신청 및 인터뷰요청 글은 자신과 원본글의 작성자만 볼 수 있다.
+* 개인 프로필정보는 공개/비공개 옵션으로 변경할 수 있다.
+* 본인 작성 일꺼리 및 일할사람 글에 대해서는 구직신청 및 인터뷰요청을 할 수 없다.
 
 
 ## 기능구현
@@ -107,14 +107,18 @@
 * 일할사람 작성 (Worker)
 * 일꺼리 -> 구직신청(Engage)
 * 일할사람 -> 인터뷰요청(Engage)
-* 댓글 (Comment) - 모든 글에 댓글을 달 수 있도록 한다. 
+* 댓글 (Comment) - 모든 글에 댓글을 달 수 있도록 한다.
 * 개인프로필 작성(Profile)
 * 개인프로필용 이미지 업로드(profile_image)
 * Engage 객체가 하나라도 있으면 Job / Worker 객체를 삭제할 수 없다.
-* Comment 객체가 하나라도 있으면 Engage 객체를 삭제할 수 없다. 
-* /delayed_job 으로 접근하면 delayed_job 대시보드에 접근할 수 있다. 
-* 자신이 작성한 글에 대한 알림 이메일을 발송한다. 
+* Comment 객체가 하나라도 있으면 Engage 객체를 삭제할 수 없다.
+* /delayed_job 으로 접근하면 delayed_job 대시보드에 접근할 수 있다.
+* 자신이 작성한 글에 대한 알림 이메일을 발송한다.
 * 작성 중...
+
+## 허로쿠에 배포하기
+
+* http://rorlab.gitbooks.io/railsguidebook/content/appendices/heroku.html
 
 ## ActiveJob with Delayed_Job
 http://www.youtube.com/watch?v=gar02UTpy98
@@ -122,4 +126,3 @@ http://www.youtube.com/watch?v=gar02UTpy98
 
 ## Submit with XHR
 http://stackoverflow.com/a/21607136
-  
