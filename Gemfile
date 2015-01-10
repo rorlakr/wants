@@ -61,9 +61,10 @@ gem 'rolify'
 gem 'authority'
 gem "mini_magick"
 gem "refile", require: ["refile/rails", "refile/image_processing"]
-gem 'delayed_job_active_record'
-gem "delayed_job_web"
-gem 'daemons'
+# gem 'delayed_job_active_record'
+# gem "delayed_job_web"
+# gem 'daemons'
+gem 'sucker_punch'
 gem 'remotipart', '~> 1.2'
 gem 'pg', group: :production
 gem 'rails_12factor', group: :production
