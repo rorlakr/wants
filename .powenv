@@ -1,0 +1,3 @@
+# In your app's root.
+# Make Pow!! export all the env variables contained in the .env file used by Foreman.
+export $(cat .env)
