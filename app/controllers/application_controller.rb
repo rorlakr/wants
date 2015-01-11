@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :configure_permitted_parameters, if: :devise_controller?
   before_action :counts
+  before_action :engage_status
   layout :layout_by_resource
 
   # Send 'em back where they came from with a slap on the wrist
@@ -27,7 +28,11 @@ class ApplicationController < ActionController::Base
   end
 
   def counts
-    @all_jobs = Job.all
-    @all_workers = Worker.all
+    @all_jobs = EngageStatus.where( engage_on_type: 'Job' ).where( started_status: '1')
+    @all_workers = EngageStatus.where( engage_on_type: 'Worker' ).where( started_status: '1')
+  end
+
+  def engage_status
+    @engage_statuses = EngageStatus.order(created_at: :desc)
   end
 end

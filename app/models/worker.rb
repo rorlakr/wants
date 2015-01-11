@@ -7,6 +7,9 @@ class Worker < ActiveRecord::Base
   belongs_to :user
   has_many :engages, as: :engageable, dependent: :destroy
   has_many :comments, as: :commentable, dependent: :destroy
+  has_one :engage_status, as: :engage_on, dependent: :destroy
+  accepts_nested_attributes_for :engage_status, reject_if: proc { |attributes| attributes['started_status'].blank? }
+  
 
   validates :title, :content, presence: true
 

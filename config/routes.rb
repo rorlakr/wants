@@ -13,11 +13,18 @@ Rails.application.routes.draw do
   concern :engageable do
     resources :engages, only: [:create, :destroy, :update]
   end
+
+  concern :engage_on do
+    resource :engage_status, only:[:create, :destroy]
+  end
+
   resources :jobs, concerns: :engageable
   resources :workers, concerns: :engageable
   resources :jobs, concerns: :commentable
   resources :workers, concerns: :commentable
   resources :engages, concerns: :commentable
+  resources :jobs, concerns: :engage_on
+  resources :workers, concerns: :engage_on
 
   get 'pages/welcome' => 'high_voltage/pages#show', id: 'welcome'
   get 'pages/help' => 'high_voltage/pages#show', id: 'help'

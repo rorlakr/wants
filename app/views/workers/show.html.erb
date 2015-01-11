@@ -2,7 +2,7 @@
 <p>: <%= @worker.content %> <%= published_icon(@worker.user.profile.published) if @worker.user.profile.present? %></p>
 
 <%= render 'profiles/profile', profile: @worker.user.profile if @worker.user.try(:profile).try(:published) %>
-
+<%= estatus @worker.try(:engage_status).try(:started_status) %>
 <div class="form-actions">
   <% if current_user.can_update? @worker %>
     <%= link_to t('views.workers.show.edit'), edit_worker_path(@worker), class: 'btn btn-default' %>

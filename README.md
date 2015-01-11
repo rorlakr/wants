@@ -114,6 +114,10 @@
 * Comment 객체가 하나라도 있으면 Engage 객체를 삭제할 수 없다.
 * /delayed_job 으로 접근하면 delayed_job 대시보드에 접근할 수 있다.
 * 자신이 작성한 글에 대한 알림 이메일을 발송한다.
+* 구인/구직 항목이 현재 유효한 상태인지를 알 수 있는 별도의 polymorphic 모델이 필요
+  * started:boolean default: false
+  * started_at:datetime
+  * $ bin/rails g model engage_status engage_on:references{polymorphic} started_status started_at:datetime expired_at:datetime
 * 작성 중...
 
 

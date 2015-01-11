@@ -4,8 +4,9 @@
   <table class='table table-bordered table-hover table-condensed'>
     <thead>
       <tr>
-        <th>글제목</th>
-        <th>작성일</th>
+        <th class='col-md-8'>글제목</th>
+        <th class='col-md-2'>현재상태</th>
+        <th class='col-md-2'>작성일</th>
       </tr>
     </thead>
 
@@ -13,7 +14,8 @@
       <% @workers.each do |worker| %>
         <tr>
           <td><%= link_to worker.title, worker %> <small>(<%= worker.engages.size %>)</small></td>
-          <td><%= time_ago_in_words worker.updated_at %>전</td>
+          <td class='center'><%= estatus worker.try(:engage_status).try(:started_status) %></td>
+          <td title='<%= worker.created_at%>'><%= time_ago_in_words worker.created_at %>전</td>
         </tr>
         </tr>
       <% end %>

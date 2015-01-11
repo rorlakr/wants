@@ -44,6 +44,11 @@
       <th><%= t('activerecord.attributes.job.user') %></th>
       <td><%= link_to @job.user.email, "mailto:#{@job.user.email}" %></td>
     </tr>
+
+    <tr>
+      <th>상태</th>
+      <td><%= estatus @job.try(:engage_status).try(:started_status) %></td>
+    </tr>
   </table>
 </div>
 
@@ -75,4 +80,3 @@
 <div id='comment_form_job_<%= @job.id %>' class="comment_form">
   <%= render 'comments/form', commentable: @job %>
 </div>
-

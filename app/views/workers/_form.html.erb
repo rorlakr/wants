@@ -1,3 +1,4 @@
+<% @worker.build_engage_status if @worker.engage_status.nil? %>
 <%= simple_form_for(@worker) do |f| %>
   <%= f.error_notification %>
 
@@ -16,6 +17,10 @@
   <div class="form-inputs">
     <%= f.input :title, placeholder: '안녕하세요.' %>
     <%= f.input :content, placeholder: '조속한 시일내에 최적의 직장을 구하기를 기원합니다.', input_html: { rows: 5 } %>
+    <%= f.simple_fields_for :engage_status do | f_nested | %>
+    <%= f_nested.input :started_status, collection: [['진행중', Job::ESTATUS_ON],['종료', Job::ESTATUS_OFF]] %>
+    <% end %>
+
   </div>
 
   <div class="form-actions">

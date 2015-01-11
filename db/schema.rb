@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150106075012) do
+ActiveRecord::Schema.define(version: 20150111052249) do
 
   create_table "comments", force: :cascade do |t|
     t.integer  "commentable_id"
@@ -40,6 +40,18 @@ ActiveRecord::Schema.define(version: 20150106075012) do
   end
 
   add_index "delayed_jobs", ["priority", "run_at"], name: "delayed_jobs_priority"
+
+  create_table "engage_statuses", force: :cascade do |t|
+    t.integer  "engage_on_id"
+    t.string   "engage_on_type"
+    t.string   "started_status", null: false
+    t.datetime "started_at"
+    t.datetime "expired_at"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  add_index "engage_statuses", ["engage_on_type", "engage_on_id"], name: "index_engage_statuses_on_engage_on_type_and_engage_on_id"
 
   create_table "engages", force: :cascade do |t|
     t.integer  "engageable_id"

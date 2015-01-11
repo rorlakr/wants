@@ -1,8 +1,8 @@
 <%= content_for :main_content do %>
     <div class="left-sidebar col-md-3">
-      <p><%= link_to '일꺼리', jobs_path %> > <%= @all_jobs.size %></p>
+      <p><%= link_to '일꺼리', jobs_path %> > <%= @all_jobs.size %>건 진행 중</p>
       <ul class='engage_list'>
-      <% @all_jobs.limit(10).each do | job | %>
+      <% @all_jobs.limit(10).map(&:engage_on).each do | job | %>
         <li><%= link_to job.title, job_path(job) %></li>
       <% end %>
       </ul>
@@ -17,9 +17,9 @@
 
     </div>
     <div class="right-sidebar col-md-3">
-      <p><%= link_to '일할사람', workers_path %> > <%= @all_workers.size %></p>
+      <p><%= link_to '일할사람', workers_path %> > <%= @all_workers.size %>건 진행 중</p>
       <ul class='engage_list'>
-      <% @all_workers.limit(10).each do | worker | %>
+      <% @all_workers.limit(10).map(&:engage_on).each do | worker | %>
         <li><%= link_to worker.title, worker_path(worker) %></li>
       <% end %>
       </ul>

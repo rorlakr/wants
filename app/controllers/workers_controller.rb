@@ -5,7 +5,7 @@ class WorkersController < ApplicationController
   respond_to :html, :js
 
   def index
-    @workers = Worker.all
+    @workers = Worker.order(created_at: :desc)
     respond_with(@workers)
   end
 
@@ -62,7 +62,7 @@ class WorkersController < ApplicationController
     end
 
     def worker_params
-      params.require(:worker).permit(:title, :content, :user_id, )
+      params.require(:worker).permit(:title, :content, :user_id, engage_status_attributes:[:started_status])
     end
 
 end

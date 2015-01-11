@@ -18,6 +18,8 @@ ko:
         always: 상시구인
         contact: 연락처
         user: 작성자
+      engage_status:
+        started_status: 현재상태
       worker:
         title: 글제목
         content: 글내용
@@ -44,5 +46,3 @@ ko:
         book_trans: 번역서
         user: 작성자
         published: 프로필 정보공개
-
-

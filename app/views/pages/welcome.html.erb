@@ -5,12 +5,37 @@
   </h2>
 </div>
 
-
 <div class='main_link row'>
   <div class='jobs col-md-6'>
     <%= link_to t('views.pages.jobs_label_html', jobs_count: @all_jobs.size), jobs_path %>
   </div>
   <div class='workers col-md-6'>
     <%= link_to t('views.pages.workers_label_html', workers_count: @all_workers.size), workers_path %>
+  </div>
+</div>
+
+<div class='col-md-12' style='padding:0 2em;'>
+  <h2>상태</h2>
+  <div class='panel panel-default'>
+    <table class='table'>
+    <thead>
+      <tr>
+        <th class='col-md-1'>구분</th>
+        <th class='col-md-1'>상태</th>
+        <th class='col-md-8'>내용</th>
+        <th class='col-md-2'>작성일자</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @engage_statuses.each do | engage_status | %>
+      <tr>
+        <td class='center'><%= engage_status.engage_on.class.name %></td>
+        <td class='center'><%= estatus engage_status.started_status %></td>
+        <td><%= link_to engage_status.engage_on.title, engage_status.engage_on %></td>
+        <td title="<%= engage_status.created_at%>"><%= time_ago_in_words engage_status.created_at %>전</td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
   </div>
 </div>

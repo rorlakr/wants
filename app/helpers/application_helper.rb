@@ -32,4 +32,15 @@ module ApplicationHelper
     bool ? fa_icon('unlock', text:'프로필정보') : fa_icon('lock', text:'프로필정보')
   end
 
+  def estatus( status_code )
+    case status_code
+    when Job::ESTATUS_ON
+      fa_icon('circle', text: "진행중", style:'color:green')
+    when Job::ESTATUS_OFF
+      fa_icon('circle', text: "종료됨", style:'color:red')
+    else
+      "N/A"
+    end
+  end
+
 end

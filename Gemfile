@@ -64,6 +64,7 @@ gem 'delayed_job_active_record'
 gem "delayed_job_web"
 gem 'daemons'
 gem 'remotipart', '~> 1.2'
+gem 'quiet_assets', group: :development
 
 group :development, :test do
   gem "rspec-rails", "~> 3.1.0"

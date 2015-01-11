@@ -1,9 +1,13 @@
+<% @job.build_engage_status if @job.engage_status.nil? %>
 <%= simple_form_for(@job) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
     <%= f.input :title %>
     <%= f.input :content, input_html:{ rows: 5 } %>
+    <%= f.simple_fields_for :engage_status do | f_nested | %>
+      <%= f_nested.input :started_status, collection: [['진행중', Job::ESTATUS_ON],['종료', Job::ESTATUS_OFF]] %>
+    <% end %>
 
     <fieldset>
       <legend>상세자료</legend>
@@ -30,4 +34,3 @@
     <%= link_to t('views.jobs.form.back'), jobs_path, class:'btn btn-default' %>
   </div>
 <% end %>
-
