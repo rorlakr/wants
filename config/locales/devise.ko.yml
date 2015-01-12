@@ -13,10 +13,10 @@ ko:
     failure:
       already_authenticated: '이미 로그인하셨습니다.'
       inactive: '계정이 아직 활성화 되지 않았습니다.'
-      invalid: "이메일 또는 패스워드가 다릅니다."
+      invalid: "계정명/이메일 또는 패스워드가 다릅니다."
       locked: '계정이 잠겼습니다.'
       last_attempt: "이제 한번 더 로그인 시도시 실패하면 계정이 잠근 상태로 전환됩니다."
-      not_found_in_database: "이메일 또는 패스워드가 존재하지 않습니다."
+      not_found_in_database: "계정명/이메일 또는 패스워드가 존재하지 않습니다."
       timeout: '세션이 만료되어습니다, 계속하시려면 로그인해주세요.'
       unauthenticated: '이용하시려면 로그인하거나 가입하셔야 합니다.'
       unconfirmed: '계정 확인 하셔야 이용하실 수 있습니다.'

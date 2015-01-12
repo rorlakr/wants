@@ -13,10 +13,23 @@ class ApplicationController < ActionController::Base
     redirect_to request.referrer.presence || root_path, :alert => "#{view_context.fa_icon('exclamation-triangle')}[권한제한] 죄송합니다. 작업을 수행할 수 없습니다.<br />이와 관련된 질문 사항은 <a href='mailto:rorlab@gmail.com'>관리자</a>에게 이메일로 해 주시기 바랍니다."
   end
 
-  protected
+private
+
+  def counts
+    @all_jobs = EngageStatus.where( engage_on_type: 'Job' ).where( started_status: '1')
+    @all_workers = EngageStatus.where( engage_on_type: 'Worker' ).where( started_status: '1')
+  end
+
+  def engage_status
+    @engage_statuses = EngageStatus.order(created_at: :desc)
+  end
+
+protected
 
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:sign_up) << :username
+    devise_parameter_sanitizer.for(:sign_in) << [:login, :username]
+    devise_parameter_sanitizer.for(:account_update) << :username
   end
 
   def layout_by_resource
@@ -27,12 +40,4 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  def counts
-    @all_jobs = EngageStatus.where( engage_on_type: 'Job' ).where( started_status: '1')
-    @all_workers = EngageStatus.where( engage_on_type: 'Worker' ).where( started_status: '1')
-  end
-
-  def engage_status
-    @engage_statuses = EngageStatus.order(created_at: :desc)
-  end
 end

@@ -3,7 +3,7 @@
     <% if current_user.profile.present? && current_user.profile.profile_image_id? %>
       <%= image_tag attachment_url(current_user.profile, :profile_image, :fill, 50, 50), class:'profile_image', size:'19x19' %>
     <% end %>
-    <%= link_to "#{current_user.email}(#{current_user.roles.map(&:name).join(', ')})", edit_user_registration_path %> |
+    <%= link_to "#{user_label(current_user)}(#{current_user.roles.map(&:name).join(', ')})", edit_user_registration_path %> |
     <% if current_user.profile %>
       <%= link_to "나의 프로필", user_profile_path(current_user) %>
     <% else %>

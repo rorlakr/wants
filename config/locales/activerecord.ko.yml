@@ -2,6 +2,8 @@ ko:
   activerecord:
     attributes:
       user:
+        login: 계정명 또는 이메일주소
+        username: 계정명
         email: 이메일
         password: 비밀번호
         password_confirmation: 비밀번호 재입력
@@ -26,7 +28,6 @@ ko:
       profile:
         profile_image: 프로필이미지
         real_name: 사용자실명
-        alias_name: 로그인명
         phone: 전화번호
         homepage: 홈페이지주소
         twitter: 트위터계정

@@ -42,7 +42,7 @@
 
     <tr>
       <th><%= t('activerecord.attributes.job.user') %></th>
-      <td><%= link_to @job.user.email, "mailto:#{@job.user.email}" %></td>
+      <td><%= link_to (@job.user.profile.real_name || @job.user.email), "mailto:#{@job.user.email}" %></td>
     </tr>
 
     <tr>

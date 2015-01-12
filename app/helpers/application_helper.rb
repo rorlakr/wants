@@ -43,4 +43,8 @@ module ApplicationHelper
     end
   end
 
+  def user_label(user)
+    user.username ? user.username : user.email
+  end
+
 end
